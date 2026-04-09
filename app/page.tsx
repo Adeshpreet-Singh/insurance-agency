@@ -76,18 +76,9 @@ you can trust.
               </div>
             </div>
             <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-300">50+</div>
-              <div className="text-sm text-blue-300 mt-1">Carriers</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-300">$2B+</div>
-              <div className="text-sm text-blue-300 mt-1">Coverage placed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-300">95%</div>
-              <div className="text-sm text-blue-300 mt-1">Retention</div>
-            </div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-blue-300">50+</div><div className="text-sm text-blue-300 mt-1">Carriers</div></div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-blue-300">$2B+</div><div className="text-sm text-blue-300 mt-1">Coverage placed</div></div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-blue-300">95%</div><div className="text-sm text-blue-300 mt-1">Retention</div></div>
             </div>
           </div>
         </section>
@@ -99,36 +90,30 @@ you can trust.
               <h2 id="services-heading" className="text-4xl md:text-5xl font-bold">Our Services</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🚗</div>
+            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🚗</div>
               <h3 className="text-xl font-bold mb-3 text-blue-50">Auto</h3>
-              <p className="text-blue-300 leading-relaxed">Car, truck, motorcycle insurance.</p>
-            </article>
-            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🏠</div>
+              <p className="text-blue-300 leading-relaxed">Car, truck, motorcycle insurance.</p></article>
+            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-xl font-bold mb-3 text-blue-50">Home</h3>
-              <p className="text-blue-300 leading-relaxed">Homeowners and renters insurance.</p>
-            </article>
-            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">❤️</div>
+              <p className="text-blue-300 leading-relaxed">Homeowners and renters insurance.</p></article>
+            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">❤️</div>
               <h3 className="text-xl font-bold mb-3 text-blue-50">Life</h3>
-              <p className="text-blue-300 leading-relaxed">Term and whole life policies.</p>
-            </article>
-            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🏢</div>
+              <p className="text-blue-300 leading-relaxed">Term and whole life policies.</p></article>
+            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🏢</div>
               <h3 className="text-xl font-bold mb-3 text-blue-50">Business</h3>
-              <p className="text-blue-300 leading-relaxed">Commercial liability and property.</p>
-            </article>
-            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">💊</div>
+              <p className="text-blue-300 leading-relaxed">Commercial liability and property.</p></article>
+            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">💊</div>
               <h3 className="text-xl font-bold mb-3 text-blue-50">Health</h3>
-              <p className="text-blue-300 leading-relaxed">Individual and group health plans.</p>
-            </article>
-            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">☂️</div>
+              <p className="text-blue-300 leading-relaxed">Individual and group health plans.</p></article>
+            <article className="bg-blue-900 border border-blue-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">☂️</div>
               <h3 className="text-xl font-bold mb-3 text-blue-50">Umbrella</h3>
-              <p className="text-blue-300 leading-relaxed">Additional liability coverage.</p>
-            </article>
+              <p className="text-blue-300 leading-relaxed">Additional liability coverage.</p></article>
             </div>
           </div>
         </section>
@@ -142,28 +127,16 @@ you can trust.
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-blue-900 border border-blue-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-300/20 flex items-center justify-center text-2xl font-bold text-blue-300">RC</div>
-              <h3 className="font-bold text-blue-50">Robert Chen</h3>
-              <p className="text-sm text-blue-300">Agency Principal</p>
-              <p className="text-sm text-blue-300 mt-1">CPCU certified</p>
-            </div>
+              <h3 className="font-bold text-blue-50">Robert Chen</h3><p className="text-sm text-blue-300">Agency Principal</p><p className="text-sm text-blue-300 mt-1">CPCU certified</p></div>
             <div className="bg-blue-900 border border-blue-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-300/20 flex items-center justify-center text-2xl font-bold text-blue-300">SW</div>
-              <h3 className="font-bold text-blue-50">Sarah Williams</h3>
-              <p className="text-sm text-blue-300">Personal Lines</p>
-              <p className="text-sm text-blue-300 mt-1">CIC certified</p>
-            </div>
+              <h3 className="font-bold text-blue-50">Sarah Williams</h3><p className="text-sm text-blue-300">Personal Lines</p><p className="text-sm text-blue-300 mt-1">CIC certified</p></div>
             <div className="bg-blue-900 border border-blue-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-300/20 flex items-center justify-center text-2xl font-bold text-blue-300">DK</div>
-              <h3 className="font-bold text-blue-50">David Kim</h3>
-              <p className="text-sm text-blue-300">Commercial Lines</p>
-              <p className="text-sm text-blue-300 mt-1">ARM certified</p>
-            </div>
+              <h3 className="font-bold text-blue-50">David Kim</h3><p className="text-sm text-blue-300">Commercial Lines</p><p className="text-sm text-blue-300 mt-1">ARM certified</p></div>
             <div className="bg-blue-900 border border-blue-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-300/20 flex items-center justify-center text-2xl font-bold text-blue-300">MG</div>
-              <h3 className="font-bold text-blue-50">Maria Garcia</h3>
-              <p className="text-sm text-blue-300">Life & Health</p>
-              <p className="text-sm text-blue-300 mt-1">CLU certified</p>
-            </div>
+              <h3 className="font-bold text-blue-50">Maria Garcia</h3><p className="text-sm text-blue-300">Life & Health</p><p className="text-sm text-blue-300 mt-1">CLU certified</p></div>
             </div>
           </div>
         </section>
@@ -176,26 +149,14 @@ you can trust.
             </div>
             <div className="space-y-4">
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-blue-50">
-                How to save?
-                <span className="ml-4 text-blue-300 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-blue-300 text-sm leading-relaxed">Bundle home + auto for up to 25% savings.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-blue-50">How to save?<span className="ml-4 text-blue-300 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-blue-300 text-sm leading-relaxed">Bundle home + auto for up to 25% savings.</p></details>
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-blue-50">
-                Claims?
-                <span className="ml-4 text-blue-300 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-blue-300 text-sm leading-relaxed">We advocate for you through the entire claims process.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-blue-50">Claims?<span className="ml-4 text-blue-300 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-blue-300 text-sm leading-relaxed">We advocate for you through the entire claims process.</p></details>
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-blue-50">
-                Switch?
-                <span className="ml-4 text-blue-300 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-blue-300 text-sm leading-relaxed">We handle all paperwork to switch carriers.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-blue-50">Switch?<span className="ml-4 text-blue-300 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-blue-300 text-sm leading-relaxed">We handle all paperwork to switch carriers.</p></details>
             </div>
           </div>
         </section>
@@ -207,18 +168,9 @@ you can trust.
                 <p className="text-blue-300 text-sm tracking-widest uppercase mb-3">Get In Touch</p>
                 <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Get Quote</h2>
                 <div className="space-y-6 text-blue-300">
-                  <div>
-                    <div className="font-bold text-blue-50">Phone</div>
-                    <a href="tel:(555) 012-3457" className="hover:text-blue-300 transition-colors">(555) 012-3457</a>
-                  </div>
-                  <div>
-                    <div className="font-bold text-blue-50">Address</div>
-                    <p className="whitespace-pre-line">500 Insurance Way, Hartford, CT</p>
-                  </div>
-                  <div>
-                    <div className="font-bold text-blue-50">Hours</div>
-                    <p>Mon–Fri 8:30 AM – 5 PM</p>
-                  </div>
+                  <div><div className="font-bold text-blue-50">Phone</div><a href="tel:(555) 012-3457" className="hover:text-blue-300">(555) 012-3457</a></div>
+                  <div><div className="font-bold text-blue-50">Address</div><p>500 Insurance Way, Hartford, CT</p></div>
+                  <div><div className="font-bold text-blue-50">Hours</div><p>Mon–Fri 8:30 AM – 5 PM</p></div>
                 </div>
               </div>
               <div>
