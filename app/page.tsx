@@ -88,9 +88,9 @@ you can trust.</h2>
         {/* TEAM - Dark section with initials */}
         <section id="team" className="py-24 bg-blue-900" aria-labelledby="team-heading">
           <div className="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-8 mb-16">
-              <div class="md:col-span-5"><p class="text-blue-300 text-sm tracking-widest uppercase mb-3">Our Team</p><h2 id="team-heading" class="text-4xl font-bold">The experts behind your success.</h2></div>
-              <div class="md:col-span-7 flex items-end"><p class="text-blue-300">Our team combines deep expertise with strategic vision.</p></div>
+            <div className="grid md:grid-cols-12 gap-8 mb-16">
+              <div className="md:col-span-5"><p className="text-blue-300 text-sm tracking-widest uppercase mb-3">Our Team</p><h2 id="team-heading" className="text-4xl font-bold">The experts behind your success.</h2></div>
+              <div className="md:col-span-7 flex items-end"><p className="text-blue-300">Our team combines deep expertise with strategic vision.</p></div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-blue-900 rounded-2xl p-6 text-center">
@@ -129,7 +129,7 @@ you can trust.</h2>
             <div>
               <p className="text-blue-300 text-sm tracking-widest uppercase mb-3">Get In Touch</p>
               <h2 id="contact-heading" className="text-4xl font-bold mb-6">Get Quote</h2>
-              <div className="space-y-6 text-blue-300">                  <div><div className="font-bold">Phone</div><a href="tel:(555) 012-3457" class="text-blue-300">(555) 012-3457</a></div>
+              <div className="space-y-6 text-blue-300">                  <div><div className="font-bold">Phone</div><a href="tel:(555) 012-3457" className="text-blue-300">(555) 012-3457</a></div>
                   <div><div className="font-bold">Address</div><p>500 Insurance Way, Hartford, CT</p></div>
                   <div><div className="font-bold">Hours</div><p>Mon–Fri 8:30 AM – 5 PM</p></div></div>
             </div>
