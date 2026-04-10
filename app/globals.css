@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
+:root { --navy: #1a365d; --gold: #c9a959; --cream: #faf9f6; }
 html { scroll-behavior: smooth; }
-body { background: #0c1929; color: #e2e8f0; font-family: system-ui, sans-serif; }
-:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+body { background: var(--cream); color: #1a1a1a; font-family: 'Work Sans', sans-serif; }
+.heading-trust { font-family: 'Libre Baskerville', Georgia, serif; line-height: 1.15; }
+.coverage-card { background: white; border: 1px solid #e8e0d4; border-radius: 1rem; padding: 2rem; transition: all 0.3s; }
+.coverage-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+input, textarea, select { background: white !important; border: 1px solid #d4c9b8 !important; padding: 0.75rem 1rem; border-radius: 0.5rem; }
+input:focus, textarea:focus, select:focus { border-color: var(--navy) !important; outline: none; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; } }
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
