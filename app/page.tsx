@@ -30,7 +30,7 @@ export default function Home() {
             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Insurance" className="w-full h-80 object-cover rounded-lg" loading="lazy" />
           </div>
         </section>
-        <section id="coverage" className="py-24 px-8" style={{ background: 'white' }}>
+        <section id="coverage" className="reveal py-24 px-8" style={{ background: 'white' }}>
           <div className="max-w-5xl mx-auto">
             <p className="text-xs tracking-[0.3em] uppercase mb-3" style={{ color: 'var(--gold)' }}>What We Cover</p>
             <h2 className="heading-trust text-4xl font-bold mb-12" style={{ color: 'var(--navy)' }}>Coverage Options</h2>
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="quote" className="py-24 px-8" style={{ background: 'var(--navy)', color: 'white' }}>
+        <section id="quote" className="reveal py-24 px-8" style={{ background: 'var(--navy)', color: 'white' }}>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xs tracking-[0.3em] uppercase mb-3 opacity-60">No Obligation</p>
             <h2 className="heading-trust text-4xl font-bold mb-6">Get a Free Quote</h2>
@@ -63,7 +63,7 @@ export default function Home() {
             )}
           </div>
         </section>
-        <section id="contact" className="py-16 px-8">
+        <section id="contact" className="reveal py-16 px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="heading-trust text-2xl font-bold mb-4" style={{ color: 'var(--navy)' }}>Sterling Insurance Group</h2>
             <div className="flex justify-center gap-8 text-sm opacity-60 flex-wrap">
