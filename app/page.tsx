@@ -43,7 +43,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 px-8 py-4 flex justify-between items-center" style={{ background: 'rgba(255,255,255,0.93)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)' }}>
         <div>
-          <h1 className="heading text-xl font-bold">Sterling Insurance Group</h1>
+          <h1 className="heading-sans text-xl font-bold">Sterling Insurance Group</h1>
           <p className="text-base tracking-[0.2em] uppercase" style={{ color: 'var(--body)' }}>Independent Agency · Est. 1988</p>
         </div>
         <div className="hidden md:flex gap-8 text-base" style={{ color: 'var(--body)' }}>
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div>
               <span className="badge mb-5">Independent Insurance Agency</span>
-              <h2 className="heading text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <h2 className="heading-sans text-5xl md:text-6xl font-bold mb-6 leading-tight">
                 Protection for<br />what matters <em style={{ color: 'var(--accent)', fontStyle: 'normal' }}>most.</em>
               </h2>
               <p className="text-lg mb-8 leading-relaxed max-w-lg" style={{ color: 'var(--body)' }}>
@@ -71,9 +71,9 @@ export default function Home() {
                 <button style={{ cursor: "pointer" }} onClick={() => scrollTo('coverage')} className="btn btn-outline">View Coverage</button>
               </div>
               <div className="flex gap-8 mt-10 text-base font-medium" style={{ color: '#334155' }}>
-                <div><span className="heading text-2xl font-bold block">25+</span>Carriers Compared</div>
-                <div><span className="heading text-2xl font-bold block">35</span>Years in Business</div>
-                <div><span className="heading text-2xl font-bold block">12K+</span>Clients Served</div>
+                <div><span className="heading-sans text-2xl font-bold block">25+</span>Carriers Compared</div>
+                <div><span className="heading-sans text-2xl font-bold block">35</span>Years in Business</div>
+                <div><span className="heading-sans text-2xl font-bold block">12K+</span>Clients Served</div>
               </div>
             </div>
             <div className="img-hover">
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="badge mb-4">What We Cover</span>
-              <h2 className="heading text-4xl font-bold mb-4">Comprehensive Coverage Options</h2>
+              <h2 className="heading-sans text-4xl font-bold mb-4">Comprehensive Coverage Options</h2>
               <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
                 From your daily commute to your biggest investment, Sterling Insurance Group offers protection across every major line of personal and commercial insurance. Each policy is customized to your exact situation.
               </p>
@@ -96,7 +96,7 @@ export default function Home() {
               {coverage.map(c => (
                 <div key={c.name} className="card">
                   <span className="text-3xl mb-4 block">{c.icon}</span>
-                  <h3 className="heading text-lg font-semibold mb-2">{c.name}</h3>
+                  <h3 className="heading-sans text-lg font-semibold mb-2">{c.name}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--body)' }}>{c.desc}</p>
                 </div>
               ))}
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="badge mb-4">Why Choose Us</span>
-              <h2 className="heading text-4xl font-bold mb-4">The Sterling Difference</h2>
+              <h2 className="heading-sans text-4xl font-bold mb-4">The Sterling Difference</h2>
               <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
                 Insurance is complicated enough. Here is what makes working with Sterling Insurance Group a fundamentally better experience than buying direct or through a captive agent.
               </p>
@@ -118,7 +118,7 @@ export default function Home() {
               {differentiators.map(d => (
                 <div key={d.title} className="card text-center">
                   <span className="text-4xl mb-4 block">{d.icon}</span>
-                  <h3 className="heading text-lg font-semibold mb-3">{d.title}</h3>
+                  <h3 className="heading-sans text-lg font-semibold mb-3">{d.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--body)' }}>{d.desc}</p>
                 </div>
               ))}
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="badge mb-4">How It Works</span>
-              <h2 className="heading text-4xl font-bold mb-4">Getting a Quote Is Simple</h2>
+              <h2 className="heading-sans text-4xl font-bold mb-4">Getting a Quote Is Simple</h2>
               <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
                 We have streamlined our quoting process so you can get competitive rates without the hassle. There is no cost, no obligation, and no pressure. Just honest advice and real savings.
               </p>
@@ -143,8 +143,8 @@ export default function Home() {
                 { step: '03', title: 'Review and Choose', desc: 'Within twenty-four hours, you receive a personalized quote comparison with our professional recommendation. Review the options at your convenience, ask any questions, and select the policy that fits your budget and coverage requirements best.' },
               ].map(item => (
                 <div key={item.step} className="card relative">
-                  <span className="heading text-5xl font-bold opacity-10 absolute top-4 right-6">{item.step}</span>
-                  <h3 className="heading text-lg font-semibold mb-3 mt-4">{item.title}</h3>
+                  <span className="heading-sans text-5xl font-bold opacity-10 absolute top-4 right-6">{item.step}</span>
+                  <h3 className="heading-sans text-lg font-semibold mb-3 mt-4">{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--body)' }}>{item.desc}</p>
                 </div>
               ))}
@@ -157,7 +157,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="badge mb-4">Claims Support</span>
-              <h2 className="heading text-4xl font-bold mb-4">When You Need to File a Claim</h2>
+              <h2 className="heading-sans text-4xl font-bold mb-4">When You Need to File a Claim</h2>
               <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
                 Filing an insurance claim can be stressful. Our claims advocacy team guides you through every step and fights for a fair outcome so you can focus on what matters most.
               </p>
@@ -170,7 +170,7 @@ export default function Home() {
               ].map(item => (
                 <div key={item.step} className="card text-center">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold" style={{ background: 'var(--accent)' }}>{item.step}</div>
-                  <h3 className="heading text-lg font-semibold mb-3">{item.title}</h3>
+                  <h3 className="heading-sans text-lg font-semibold mb-3">{item.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--body)' }}>{item.desc}</p>
                 </div>
               ))}
@@ -183,7 +183,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <span className="badge mb-4">Client Stories</span>
-              <h2 className="heading text-4xl font-bold mb-4">What Our Clients Say</h2>
+              <h2 className="heading-sans text-4xl font-bold mb-4">What Our Clients Say</h2>
               <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
                 Our reputation is built on decades of honest service and real results. Here is what some of our long-term clients have to say about working with Sterling Insurance Group.
               </p>
@@ -208,7 +208,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-16">
               <span className="badge mb-4">Common Questions</span>
-              <h2 className="heading text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+              <h2 className="heading-sans text-4xl font-bold mb-4">Frequently Asked Questions</h2>
               <p style={{ color: 'var(--body)' }}>
                 Have questions about working with an independent insurance agency? We have compiled answers to the most common inquiries we receive from new and existing clients.
               </p>
@@ -217,7 +217,7 @@ export default function Home() {
               {faqs.map((f, i) => (
                 <div key={i} className="card cursor-pointer" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
                   <div className="flex justify-between items-center">
-                    <h3 className="heading font-semibold text-sm pr-4">{f.q}</h3>
+                    <h3 className="heading-sans font-semibold text-sm pr-4">{f.q}</h3>
                     <span className="text-xl flex-shrink-0 transition-transform" style={{ transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)', color: 'var(--accent)' }}>+</span>
                   </div>
                   {openFaq === i && (
@@ -233,13 +233,13 @@ export default function Home() {
         <section id="quote" className="reveal py-24 px-8" style={{ background: 'var(--dark)', color: 'white' }}>
           <div className="max-w-3xl mx-auto text-center">
             <span className="badge mb-4" style={{ background: 'rgba(83,58,253,0.2)', color: '#a78bfa' }}>No Obligation</span>
-            <h2 className="heading text-4xl font-bold mb-4">Request Your Free Quote</h2>
+            <h2 className="heading-sans text-4xl font-bold mb-4">Request Your Free Quote</h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Tell us what you need covered and a Sterling agent will compare rates from over twenty-five carriers to find you the best deal. Most quotes are delivered within twenty-four hours. There is no cost and no obligation to buy.
             </p>
             {submitted ? (
               <div className="py-12">
-                <p className="heading text-3xl font-bold mb-3" style={{ color: '#a78bfa' }}>Quote Request Received</p>
+                <p className="heading-sans text-3xl font-bold mb-3" style={{ color: '#a78bfa' }}>Quote Request Received</p>
                 <p style={{ color: 'rgba(255,255,255,0.7)' }}>A dedicated Sterling agent will contact you within twenty-four hours with your personalized quote comparison. Thank you for choosing Sterling Insurance Group.</p>
               </div>
             ) : (
@@ -264,7 +264,7 @@ export default function Home() {
         {/* Contact */}
         <section id="contact" className="reveal py-16 px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading text-2xl font-bold mb-6">Sterling Insurance Group</h2>
+            <h2 className="heading-sans text-2xl font-bold mb-6">Sterling Insurance Group</h2>
             <div className="flex justify-center gap-10 flex-wrap text-sm" style={{ color: 'var(--body)' }}>
               <div>
                 <p className="font-semibold mb-1" style={{ color: 'var(--heading)' }}>Office</p>
