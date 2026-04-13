@@ -47,7 +47,7 @@ export default function Home() {
           <p className="text-base tracking-[0.2em] uppercase" style={{ color: 'var(--body)' }}>Independent Agency · Est. 1988</p>
         </div>
         <div className="hidden md:flex gap-8 text-base" style={{ color: 'var(--body)' }}>
-          {['coverage', 'why-us', 'process', 'testimonials', 'faq', 'quote'].map(s => (
+          {['coverage', 'why-us', 'process', 'testimonials', 'faq'].map(s => (
             <button key={s} onClick={() => scrollTo(s)} className="btn capitalize hover:opacity-100 opacity-90 transition-opacity">{s.replace('-', ' ')}</button>
           ))}
         </div>
@@ -70,14 +70,14 @@ export default function Home() {
                 <button onClick={() => scrollTo('quote')} className="btn btn">Get a Free Quote</button>
                 <button onClick={() => scrollTo('coverage')} className="btn btn-outline">View Coverage</button>
               </div>
-              <div className="flex gap-8 mt-10 text-sm" style={{ color: 'var(--body)' }}>
+              <div className="flex gap-8 mt-10 text-base font-medium" style={{ color: '#334155' }}>
                 <div><span className="heading text-2xl font-bold block">25+</span>Carriers Compared</div>
                 <div><span className="heading text-2xl font-bold block">35</span>Years in Business</div>
                 <div><span className="heading text-2xl font-bold block">12K+</span>Clients Served</div>
               </div>
             </div>
             <div className="img-hover">
-              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Professional insurance consultation" className="w-full h-96 object-cover rounded-lg" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80" alt="Professional insurance consultation" className="w-full h-96 object-cover rounded-lg" loading="lazy" />
             </div>
           </div>
         </section>
