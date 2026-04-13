@@ -48,10 +48,10 @@ export default function Home() {
         </div>
         <div className="hidden md:flex gap-8 text-base" style={{ color: 'var(--body)' }}>
           {['coverage', 'why-us', 'process', 'testimonials', 'faq'].map(s => (
-            <button key={s} onClick={() => scrollTo(s)} className="btn capitalize hover:opacity-100 opacity-90 transition-opacity">{s.replace('-', ' ')}</button>
+            <button style={{ cursor: "pointer" }} key={s} onClick={() => scrollTo(s)} className="btn capitalize hover:opacity-100 opacity-90 transition-opacity">{s.replace('-', ' ')}</button>
           ))}
         </div>
-        <button onClick={() => scrollTo('quote')} className="btn btn text-base">Get Quote</button>
+        <button style={{ cursor: "pointer" }} onClick={() => scrollTo('quote')} className="btn btn text-base">Get Quote</button>
       </nav>
 
       <main>
@@ -67,8 +67,8 @@ export default function Home() {
                 Sterling Insurance Group represents over twenty-five top-rated carriers, which means we shop the entire market on your behalf. You get independent advice, competitive rates, and a dedicated agent who knows your name and understands your unique coverage needs. Whether you are protecting your family, your home, your vehicle, or your business, we build tailored policies that give you genuine peace of mind.
               </p>
               <div className="flex gap-4 flex-wrap">
-                <button onClick={() => scrollTo('quote')} className="btn btn">Get a Free Quote</button>
-                <button onClick={() => scrollTo('coverage')} className="btn btn-outline">View Coverage</button>
+                <button style={{ cursor: "pointer" }} onClick={() => scrollTo('quote')} className="btn btn">Get a Free Quote</button>
+                <button style={{ cursor: "pointer" }} onClick={() => scrollTo('coverage')} className="btn btn-outline">View Coverage</button>
               </div>
               <div className="flex gap-8 mt-10 text-base font-medium" style={{ color: '#334155' }}>
                 <div><span className="heading text-2xl font-bold block">25+</span>Carriers Compared</div>
@@ -245,16 +245,16 @@ export default function Home() {
             ) : (
               <form onSubmit={e => { e.preventDefault(); setSubmitted(true); }} className="space-y-4 text-left" style={{ color: '#1a1a1a' }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input type="text" placeholder="Full Name" required className="w-full border border-gray-300 " />
-                  <input type="tel" placeholder="Phone Number" required className="w-full border border-gray-300 " />
+                  <input type="text" placeholder="Full Name" required className="w-full border border-gray-300  border-2 border-current/20" />
+                  <input type="tel" placeholder="Phone Number" required className="w-full border border-gray-300  border-2 border-current/20" />
                 </div>
-                <input type="email" placeholder="Email Address" required className="w-full border border-gray-300 " />
+                <input type="email" placeholder="Email Address" required className="w-full border border-gray-300  border-2 border-current/20" />
                 <select className="w-full border border-gray-300 " defaultValue="">
                   <option value="" disabled>Select Coverage Type</option>
                   {coverage.map(c => <option key={c.name}>{c.name}</option>)}
                 </select>
                 <textarea rows={4} placeholder="Tell us about your current coverage, what you need, and any relevant details such as vehicle year, home value, or business type..." className="w-full border border-gray-300 " />
-                <button type="submit" className="btn w-full text-center" style={{ background: 'var(--accent)' }}>Submit Quote Request</button>
+                <button style={{ cursor: "pointer" }} type="submit" className="btn w-full text-center" style={{ background: 'var(--accent)' }}>Submit Quote Request</button>
                 <p className="text-xs text-center" style={{ color: 'rgba(255,255,255,0.5)' }}>By submitting this form, you agree to be contacted by a Sterling Insurance Group agent regarding your quote request.</p>
               </form>
             )}
@@ -287,7 +287,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-8 text-center text-xs" style={{ color: 'var(--body)', opacity: '0.88' }}>
+      <footer className="py-8 text-center text-sm" style={{ color: 'var(--body)', opacity: '0.88' }}>
         <p>Sterling Insurance Group. Atlanta, GA. Licensed in 12 states. All rights reserved.</p>
       </footer>
     </div>
