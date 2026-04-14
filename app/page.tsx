@@ -1,267 +1,453 @@
 'use client';
-import { useState } from 'react';
 
-const coverageTypes = [
-  { name: 'Auto Insurance', icon: '🚗', desc: 'Comprehensive auto protection including liability, collision, comprehensive, and uninsured motorist coverage. Multi-vehicle discounts, safe driver rewards, and SR-22 filing services available for sedans, trucks, motorcycles, and RVs.' },
-  { name: 'Home Insurance', icon: '🏠', desc: 'Full-spectrum homeowner protection covering dwelling, personal property, liability, and additional living expenses. Endorsements include flood, earthquake, and scheduled personal property for valuables.' },
-  { name: 'Life Insurance', icon: '🛡️', desc: 'Term life, whole life, and universal life policies designed to protect your family\'s financial future. Every consultation includes a free needs analysis to determine the right coverage amount.' },
-  { name: 'Health Insurance', icon: '❤️', desc: 'Individual, family, and group health plans from major carriers. We navigate the marketplace on your behalf to find plans with the best network coverage and lowest out-of-pocket costs.' },
-  { name: 'Business Insurance', icon: '🏢', desc: 'General liability, workers compensation, commercial auto, professional liability, and business owner policy packages for small and mid-size businesses across every industry.' },
-  { name: 'Umbrella Policy', icon: '☂️', desc: 'Extra liability protection extending above your auto and home policy limits, providing one to five million dollars in additional coverage against catastrophic claims and lawsuits.' },
-];
+import { useEffect, useState } from 'react';
 
-const testimonials = [
-  { name: 'Margaret Dawson', role: 'Homeowner, Buckhead', quote: 'Sterling saved us over two thousand dollars a year by switching our home and auto to a carrier we never would have found on our own. Our agent took the time to understand our family needs and explained every option clearly. We have been clients for eight years now and could not be happier.' },
-  { name: 'James Whitfield', role: 'Owner, Whitfield Construction', quote: 'As a general contractor, I need workers comp, commercial auto, and general liability all working together. Sterling bundled everything into a package that costs less than what I was paying separately. When one of my guys got injured on site, they handled the claim fast and kept my premiums from skyrocketing.' },
-  { name: 'Priya Nair', role: 'First-time Homebuyer', quote: 'I had no idea where to start with homeowners insurance. My Sterling agent walked me through every coverage type, explained what the mortgage company required, and got me a great rate before my closing date. The whole process took less than a day. I recommend them to everyone I know.' },
-];
+export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', insurance: '', message: '' });
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
-const stats = [
-  { number: '25+', label: 'Insurance Carriers', desc: 'We compare rates across the top-rated carriers in the market.' },
-  { number: '35', label: 'Years of Experience', desc: 'Serving families and businesses across the Southeast since 1988.' },
-  { number: '12K+', label: 'Clients Protected', desc: 'Thousands of families and businesses trust Sterling with their coverage.' },
-  { number: '98%', label: 'Client Retention', desc: 'Our clients stay because we deliver real value year after year.' },
-];
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
-const differentiators = [
-  { title: 'Truly Independent', desc: 'Unlike captive agents tied to one carrier, we represent over twenty-five top-rated insurance companies. This means we compare rates and coverage options across the entire market to find the best fit for your specific situation and budget.', icon: '⚖️' },
-  { title: '35+ Years of Experience', desc: 'Sterling Insurance Group has served families and businesses in the Southeast since 1988. Our veteran agents have handled thousands of policies across every major line of coverage.', icon: '🏆' },
-  { title: 'Dedicated Agent for You', desc: 'Every client is paired with a named agent who learns your circumstances, reviews your coverage annually, and is available whenever life changes require policy adjustments.', icon: '🤝' },
-  { title: 'Claims Advocacy', desc: 'When you need to file a claim, we do not disappear. Our team advocates on your behalf with the carrier and pushes for fair and timely settlements so you can focus on recovery.', icon: '📋' },
-];
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    setTimeout(() => setFormSubmitted(false), 3000);
+  };
 
-export default function Home() {
-  const [submitted, setSubmitted] = useState(false);
-  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const faqs = [
+    { q: 'What types of insurance do you offer?', a: 'We offer a comprehensive range including life insurance, health insurance, auto insurance, home and property insurance, business liability, workers compensation, and specialized coverage for unique needs.' },
+    { q: 'How do I file a claim?', a: 'You can file a claim through our online portal, by calling our 24/7 claims hotline, or by contacting your dedicated agent directly. We aim to acknowledge all claims within 2 hours and begin processing immediately.' },
+    { q: 'Can I bundle multiple policies for a discount?', a: 'Absolutely. Our bundling program offers discounts of up to 25% when you combine multiple policies. The most popular bundles are home + auto, life + health, and our comprehensive family protection package.' },
+    { q: 'How quickly can I get coverage?', a: 'For most standard policies, coverage can begin the same day you apply. After a quick assessment and quote, your policy documents are issued digitally within hours of approval.' },
+  ];
 
   return (
-    <div className="min-h-screen">
+    <>
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 px-8 py-4 flex justify-between items-center" style={{ background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)' }}>
-        <div>
-          <h1 className="heading-sans text-xl font-bold" style={{ color: 'var(--navy)' }}>Sterling Insurance Group</h1>
-          <p className="text-xs tracking-[0.2em] uppercase" style={{ color: 'var(--body)' }}>Independent Agency · Est. 1988</p>
+      <nav className="nav-stripe">
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
+          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+            <div style={{ width: 32, height: 32, background: 'var(--accent)', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: 16 }}>S</div>
+            <span style={{ fontFamily: 'var(--font)', fontWeight: 600, fontSize: '1.125rem', color: 'var(--heading)' }}>Shield Insurance</span>
+          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28 }} className="nav-desktop">
+            <a href="#coverage" className="nav-link">Coverage</a>
+            <a href="#why-us" className="nav-link">Why Us</a>
+            <a href="#plans" className="nav-link">Plans</a>
+            <a href="#testimonials" className="nav-link">Testimonials</a>
+            <a href="#faq" className="nav-link">FAQ</a>
+            <a href="#contact" className="nav-link">Contact</a>
+            <a href="#contact" className="btn-primary">Get a Quote</a>
+          </div>
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 8 }} className="mobile-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--heading)" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
         </div>
-        <div className="hidden md:flex gap-8 text-sm" style={{ color: 'var(--body)' }}>
-          {['coverage', 'why-us', 'stats', 'testimonials', 'quote'].map(s => (
-            <button key={s} onClick={() => scrollTo(s)} className="capitalize hover:opacity-100 opacity-80 transition-opacity cursor-pointer" style={{ background: 'none', border: 'none', fontFamily: 'inherit' }}>{s.replace('-', ' ')}</button>
-          ))}
-        </div>
-        <button onClick={() => scrollTo('quote')} className="btn text-sm">Get a Free Quote</button>
+        {mobileMenuOpen && (
+          <div style={{ padding: '16px 24px', borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <a href="#coverage" className="nav-link">Coverage</a>
+            <a href="#why-us" className="nav-link">Why Us</a>
+            <a href="#plans" className="nav-link">Plans</a>
+            <a href="#contact" className="nav-link">Contact</a>
+            <a href="#contact" className="btn-primary" style={{ textAlign: 'center' }}>Get a Quote</a>
+          </div>
+        )}
       </nav>
 
-      <main>
-        {/* 1. Hero Section */}
-        <section className="hero py-28 px-8">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="badge mb-5">Independent Insurance Agency</span>
-              <h2 className="heading-sans text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Protection for<br />what matters <em style={{ color: '#60a5fa', fontStyle: 'normal' }}>most.</em>
-              </h2>
-              <p className="text-lg mb-8 leading-relaxed max-w-lg" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Sterling Insurance Group represents over twenty-five top-rated carriers, which means we shop the entire market on your behalf. You get independent advice, competitive rates, and a dedicated agent who knows your name and understands your unique coverage needs. Whether you are protecting your family, your home, your vehicle, or your business, we build tailored policies that give you genuine peace of mind.
-              </p>
-              <div className="flex gap-4 flex-wrap">
-                <button onClick={() => scrollTo('quote')} className="btn" style={{ background: '#2563eb' }}>Get a Free Quote</button>
-                <button onClick={() => scrollTo('coverage')} className="btn-outline" style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}>View Coverage Options</button>
+      {/* Hero */}
+      <section className="hero" style={{ paddingTop: 140, paddingBottom: 100, minHeight: '85vh', display: 'flex', alignItems: 'center' }}>
+        <div style={{ position: 'absolute', top: -200, right: -200, width: 600, height: 600, background: 'radial-gradient(circle, rgba(83,58,253,0.2) 0%, transparent 60%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: -100, left: -100, width: 400, height: 400, background: 'radial-gradient(circle, rgba(185,185,249,0.1) 0%, transparent 60%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+          <div>
+            <div className="badge badge-dark" style={{ marginBottom: 20 }}>Trusted by 50,000+ Families</div>
+            <h1 style={{ color: 'var(--dark-text)', marginBottom: 20, fontWeight: 300 }}>
+              Protect what matters <span style={{ color: 'var(--purple-200)', fontWeight: 400 }}>most to you</span>
+            </h1>
+            <p style={{ color: 'var(--dark-muted)', fontSize: '1.125rem', marginBottom: 32, maxWidth: 480, lineHeight: 1.6 }}>
+              Comprehensive insurance solutions tailored to your life. From health and home to auto and business, we provide the coverage you need with the service you deserve.
+            </p>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 48 }}>
+              <a href="#contact" className="btn-primary btn-primary-lg">Get Free Quote</a>
+              <a href="#coverage" className="btn-ghost btn-ghost-lg" style={{ borderColor: 'var(--purple-400)', color: '#fff' }}>Explore Coverage</a>
+            </div>
+            <div style={{ display: 'flex', gap: 32 }}>
+              {[
+                { num: '50K+', label: 'Protected Families' },
+                { num: '$2B+', label: 'Claims Paid' },
+                { num: '24/7', label: 'Support Available' },
+              ].map((s, i) => (
+                <div key={i}>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--purple-200)', letterSpacing: '-0.48px' }}>{s.num}</div>
+                  <div style={{ fontSize: '0.8125rem', color: 'var(--dark-muted)' }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{ position: 'relative' }}>
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80" alt="Family protection" style={{ width: '100%', borderRadius: 8, boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }} />
+            <div style={{ position: 'absolute', bottom: -20, left: -20, background: '#fff', borderRadius: 8, padding: '16px 20px', boxShadow: 'var(--shadow-card)', display: 'flex', alignItems: 'center', gap: 12 }}>
+              <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--purple-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>🛡️</div>
+              <div>
+                <div style={{ fontWeight: 600, color: 'var(--heading)', fontSize: '0.875rem' }}>Claims Settled</div>
+                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--accent)' }}>98.5%</div>
               </div>
-              <div className="flex gap-8 mt-10 text-base font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                <div><span className="heading-sans text-3xl font-bold block" style={{ color: 'white' }}>25+</span>Carriers Compared</div>
-                <div><span className="heading-sans text-3xl font-bold block" style={{ color: 'white' }}>35</span>Years in Business</div>
-                <div><span className="heading-sans text-3xl font-bold block" style={{ color: 'white' }}>12K+</span>Clients Served</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coverage Types */}
+      <section id="coverage" style={{ padding: '100px 0' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
+            <p className="label-text" style={{ marginBottom: 12 }}>Our Coverage</p>
+            <h2 style={{ marginBottom: 16 }}>Insurance solutions for every need</h2>
+            <p style={{ maxWidth: 560, margin: '0 auto', fontSize: '1.0625rem', lineHeight: 1.6 }}>
+              Whether you are protecting your family, your health, your home, or your business, we have the right coverage for you.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+            {[
+              { icon: '❤️', title: 'Life Insurance', desc: 'Secure your family financial future with term life, whole life, and universal life policies. Coverage from $100K to $10M with competitive premiums.' },
+              { icon: '🏥', title: 'Health Insurance', desc: 'Comprehensive health coverage including individual, family, and group plans. Access to 500,000+ providers and nationwide hospital networks.' },
+              { icon: '🚗', title: 'Auto Insurance', desc: 'Full coverage auto insurance with collision, comprehensive, liability, and uninsured motorist protection. Multi-vehicle discounts available.' },
+              { icon: '🏠', title: 'Home Insurance', desc: 'Protect your biggest investment with dwelling, personal property, liability, and additional living expense coverage. Flood and earthquake riders available.' },
+              { icon: '🏢', title: 'Business Insurance', desc: 'Complete business protection including general liability, professional liability, property, cyber, and directors & officers insurance.' },
+              { icon: '✈️', title: 'Travel Insurance', desc: 'Travel with confidence. Trip cancellation, medical evacuation, baggage protection, and 24/7 emergency assistance worldwide.' },
+            ].map((cov, i) => (
+              <div key={i} className={`card-coverage reveal reveal-delay-${i % 4 + 1}`}>
+                <div style={{ width: 48, height: 48, borderRadius: 6, background: 'var(--purple-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', marginBottom: 16 }}>{cov.icon}</div>
+                <h3 style={{ marginBottom: 8, fontSize: '1.125rem' }}>{cov.title}</h3>
+                <p style={{ fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: 16 }}>{cov.desc}</p>
+                <a href="#contact" style={{ fontSize: '0.875rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 4 }}>Get Quote →</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section id="why-us" className="dark-section" style={{ padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -200, right: -100, width: 500, height: 500, background: 'radial-gradient(circle, rgba(83,58,253,0.12) 0%, transparent 60%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
+            <p className="label-text" style={{ marginBottom: 12 }}>Why Shield Insurance</p>
+            <h2 style={{ marginBottom: 16 }}>The protection you can count on</h2>
+            <p style={{ maxWidth: 560, margin: '0 auto', fontSize: '1.0625rem', lineHeight: 1.6 }}>
+              We combine comprehensive coverage with exceptional service to deliver an insurance experience that puts you first.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', marginBottom: 64 }}>
+            <div className="reveal">
+              <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Our team" style={{ width: '100%', borderRadius: 8 }} />
+            </div>
+            <div className="reveal">
+              <h3 style={{ marginBottom: 16, fontSize: '1.75rem' }}>We are more than an insurance provider</h3>
+              <p style={{ marginBottom: 20, lineHeight: 1.6, fontSize: '1.0625rem' }}>
+                Since 1998, Shield Insurance has been dedicated to providing peace of mind through comprehensive coverage and genuine care. We believe insurance should be simple, transparent, and accessible to everyone.
+              </p>
+              <p style={{ marginBottom: 24, lineHeight: 1.6, fontSize: '1.0625rem' }}>
+                Our team of licensed agents takes the time to understand your unique situation and recommend coverage that truly fits your needs and budget. No pushy sales tactics, no hidden fees, just honest protection.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                {['A+ Rated Carrier', 'Licensed in 50 States', '24/7 Claims Support', 'No Hidden Fees'].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div className="check-circle">✓</div>
+                    <span style={{ fontSize: '0.875rem', fontWeight: 500 }}>{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="img-hover">
-              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Professional insurance consultation meeting" className="w-full h-[420px] object-cover rounded-lg" loading="eager" />
-            </div>
           </div>
-        </section>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            {[
+              { number: '50K+', label: 'Families Protected' },
+              { number: '$2B+', label: 'Claims Paid' },
+              { number: '98.5%', label: 'Claims Settled' },
+              { number: '26+', label: 'Years of Trust' },
+            ].map((stat, i) => (
+              <div key={i} className={`stat-card-dark reveal reveal-delay-${i + 1}`}>
+                <div style={{ fontSize: '2.5rem', fontWeight: 300, color: 'var(--purple-200)', marginBottom: 8, letterSpacing: '-0.64px' }}>{stat.number}</div>
+                <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* 2. Coverage Types */}
-        <section id="coverage" className="py-24 px-8" style={{ background: 'white' }}>
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="badge mb-4">What We Cover</span>
-              <h2 className="heading-sans text-4xl font-bold mb-4">Comprehensive Coverage Options</h2>
-              <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
-                From your daily commute to your biggest investment, Sterling Insurance Group offers protection across every major line of personal and commercial insurance. Each policy is customized to your exact situation, and we review your coverage annually to make sure it still fits your life.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {coverageTypes.map(c => (
-                <div key={c.name} className="card">
-                  <span className="text-3xl mb-4 block">{c.icon}</span>
-                  <h3 className="heading-sans text-lg font-semibold mb-2">{c.name}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--body)' }}>{c.desc}</p>
+      {/* Plans / Pricing */}
+      <section id="plans" style={{ padding: '100px 0', background: 'var(--border-light)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
+            <p className="label-text" style={{ marginBottom: 12 }}>Insurance Plans</p>
+            <h2 style={{ marginBottom: 16 }}>Plans designed for every budget</h2>
+            <p style={{ maxWidth: 560, margin: '0 auto', fontSize: '1.0625rem', lineHeight: 1.6 }}>
+              Choose the level of protection that is right for you. All plans include our award-winning customer service and hassle-free claims process.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+            {[
+              { name: 'Essential', price: '$49', period: '/month', desc: 'Core protection for individuals', features: ['Basic life coverage ($250K)', 'Health insurance (individual)', 'Accidental death benefit', 'Online claims portal', 'Email support'], popular: false },
+              { name: 'Family Shield', price: '$129', period: '/month', desc: 'Complete family protection', features: ['Enhanced life coverage ($500K)', 'Family health insurance', 'Home insurance (basic)', 'Auto insurance (1 vehicle)', 'Dedicated agent', '24/7 phone support'], popular: true },
+              { name: 'Total Protection', price: '$249', period: '/month', desc: 'Comprehensive coverage, zero worries', features: ['Premium life coverage ($1M)', 'Premium family health', 'Home insurance (comprehensive)', 'Auto insurance (2 vehicles)', 'Umbrella liability ($1M)', 'Travel insurance', 'Priority claims processing', 'Annual policy review'], popular: false },
+            ].map((plan, i) => (
+              <div key={i} className={`card reveal reveal-delay-${i + 1}`} style={{ padding: '32px', position: 'relative', border: plan.popular ? '2px solid var(--accent)' : undefined }}>
+                {plan.popular && <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', background: 'var(--accent)', color: '#fff', padding: '4px 16px', borderRadius: 100, fontSize: '0.75rem', fontWeight: 600 }}>Most Popular</div>}
+                <h3 style={{ fontSize: '1.25rem', marginBottom: 4 }}>{plan.name}</h3>
+                <div style={{ marginBottom: 8 }}>
+                  <span style={{ fontSize: '2.5rem', fontWeight: 300, color: 'var(--heading)', letterSpacing: '-0.64px' }}>{plan.price}</span>
+                  <span style={{ fontSize: '0.875rem', color: 'var(--body)' }}>{plan.period}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 3. Why Choose Us */}
-        <section id="why-us" className="section-alt py-24 px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="badge mb-4">Why Choose Us</span>
-              <h2 className="heading-sans text-4xl font-bold mb-4">The Sterling Difference</h2>
-              <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
-                Insurance is complicated enough. Here is what makes working with Sterling Insurance Group a fundamentally better experience than buying direct or through a captive agent. We put your interests first, always.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {differentiators.map(d => (
-                <div key={d.title} className="card text-center">
-                  <span className="text-4xl mb-4 block">{d.icon}</span>
-                  <h3 className="heading-sans text-lg font-semibold mb-3">{d.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--body)' }}>{d.desc}</p>
+                <p style={{ fontSize: '0.875rem', marginBottom: 24 }}>{plan.desc}</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 24 }}>
+                  {plan.features.map((f, j) => (
+                    <div key={j} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <div className="check-circle">✓</div>
+                      <span style={{ fontSize: '0.875rem' }}>{f}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+                <a href="#contact" className={plan.popular ? 'btn-primary' : 'btn-ghost'} style={{ width: '100%', textAlign: 'center' }}>Get This Plan</a>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 4. Stats Section */}
-        <section id="stats" className="py-24 px-8" style={{ background: 'var(--navy)', color: 'white' }}>
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="badge mb-4" style={{ background: 'rgba(59,130,246,0.15)', color: '#93c5fd', borderColor: 'rgba(59,130,246,0.3)' }}>By the Numbers</span>
-              <h2 className="heading-sans text-4xl font-bold mb-4" style={{ color: 'white' }}>Decades of Trust, Proven Results</h2>
-              <p className="max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                Our numbers speak to the trust our clients place in us every single day. From the number of carriers we work with to the families we protect, Sterling Insurance Group delivers results that matter.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              {stats.map(s => (
-                <div key={s.label} className="text-center">
-                  <div className="heading-sans text-5xl md:text-6xl font-bold mb-2" style={{ color: '#60a5fa', fontFamily: "'Crimson Text', serif" }}>{s.number}</div>
-                  <p className="font-bold text-sm uppercase tracking-wider mb-2" style={{ color: 'rgba(255,255,255,0.9)' }}>{s.label}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>{s.desc}</p>
-                </div>
-              ))}
-            </div>
+      {/* Process */}
+      <section style={{ padding: '100px 0' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
+            <p className="label-text" style={{ marginBottom: 12 }}>How It Works</p>
+            <h2 style={{ marginBottom: 16 }}>Getting covered is simple</h2>
+            <p style={{ maxWidth: 560, margin: '0 auto', fontSize: '1.0625rem', lineHeight: 1.6 }}>
+              From quote to coverage in just four easy steps. No paperwork headaches, no confusing jargon.
+            </p>
           </div>
-        </section>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            {[
+              { step: '01', icon: '📝', title: 'Request a Quote', desc: 'Fill out our simple online form or call us. Takes less than 5 minutes.' },
+              { step: '02', icon: '🔍', title: 'Get Assessed', desc: 'Our agents review your needs and find the best coverage options for you.' },
+              { step: '03', icon: '📋', title: 'Choose Your Plan', desc: 'Compare plans side by side and select the one that fits your budget and needs.' },
+              { step: '04', icon: '🛡️', title: 'Start Coverage', desc: 'Your policy is issued digitally. Coverage can begin the same day.' },
+            ].map((phase, i) => (
+              <div key={i} className={`reveal reveal-delay-${i + 1}`} style={{ textAlign: 'center' }}>
+                <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'var(--purple-50)', border: '2px solid var(--purple-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: '2rem' }}>{phase.icon}</div>
+                <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', marginBottom: 8, letterSpacing: '0.08em' }}>STEP {phase.step}</div>
+                <h3 style={{ marginBottom: 8, fontSize: '1.0625rem' }}>{phase.title}</h3>
+                <p style={{ fontSize: '0.875rem', lineHeight: 1.6 }}>{phase.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* 5. Testimonials */}
-        <section id="testimonials" className="py-24 px-8" style={{ background: 'white' }}>
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <span className="badge mb-4">Client Stories</span>
-              <h2 className="heading-sans text-4xl font-bold mb-4">What Our Clients Say</h2>
-              <p className="max-w-2xl mx-auto" style={{ color: 'var(--body)' }}>
-                Our reputation is built on decades of honest service and real results. Here is what some of our long-term clients have to say about working with Sterling Insurance Group. Every testimonial reflects the personal attention and genuine care we bring to each relationship.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map(t => (
-                <div key={t.name} className="card">
-                  <div className="flex gap-1 mb-4" style={{ color: '#f59e0b' }}>{'★★★★★'}</div>
-                  <p className="text-sm leading-relaxed mb-6 italic" style={{ color: 'var(--body)' }}>&ldquo;{t.quote}&rdquo;</p>
+      {/* Testimonials */}
+      <section id="testimonials" style={{ padding: '100px 0', background: 'var(--border-light)' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
+            <p className="label-text" style={{ marginBottom: 12 }}>Testimonials</p>
+            <h2 style={{ marginBottom: 16 }}>What our clients say</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+            {[
+              { quote: "When our house was damaged in a storm, Shield Insurance had an adjuster out within 24 hours and our claim was settled in less than a week. Incredible service during a stressful time.", name: 'Robert & Lisa Chen', title: 'Homeowners, California', stars: 5 },
+              { quote: "I switched from a big national insurer to Shield and saved $2,400 a year with better coverage. My agent Sarah actually takes the time to explain everything and answer my questions.", name: 'Marcus Williams', title: 'Family Shield Plan', stars: 5 },
+              { quote: "As a small business owner, I needed comprehensive coverage without breaking the bank. Shield's business insurance package was perfect — affordable, thorough, and their support team is always available.", name: 'Jennifer Adams', title: 'CEO, Adams Consulting', stars: 5 },
+            ].map((t, i) => (
+              <div key={i} className={`testimonial-card reveal reveal-delay-${i + 1}`}>
+                <div className="stars" style={{ marginBottom: 16 }}>{'★'.repeat(t.stars)}</div>
+                <p style={{ marginBottom: 24, lineHeight: 1.6, fontSize: '0.9375rem' }}>{t.quote}</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--purple-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: 'var(--accent)', fontSize: '0.875rem' }}>{t.name.split(' ').map(w => w[0]).join('').slice(0, 2)}</div>
                   <div>
-                    <p className="font-semibold text-sm">{t.name}</p>
-                    <p className="text-xs" style={{ color: 'var(--body)' }}>{t.role}</p>
+                    <div style={{ fontWeight: 600, color: 'var(--heading)', fontSize: '0.9375rem' }}>{t.name}</div>
+                    <div style={{ fontSize: '0.8125rem', color: 'var(--body)' }}>{t.title}</div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 6. Second Image Section - About / Trust Builder */}
-        <section className="py-24 px-8" style={{ background: 'var(--cool-gray)' }}>
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div className="img-hover">
-              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80" alt="Insurance documents and paperwork review" className="w-full h-[360px] object-cover rounded-lg" loading="lazy" />
-            </div>
-            <div>
-              <span className="badge mb-4">Our Commitment</span>
-              <h2 className="heading-sans text-3xl font-bold mb-6">Your Protection Is Our Profession</h2>
-              <p className="text-base leading-relaxed mb-4" style={{ color: 'var(--body)' }}>
-                At Sterling Insurance Group, we believe insurance should be straightforward, transparent, and tailored to your life. We are not here to sell you the most expensive policy. We are here to find the right policy for your specific needs at the most competitive price available.
-              </p>
-              <p className="text-base leading-relaxed mb-6" style={{ color: 'var(--body)' }}>
-                Our independent model means we work for you, not the insurance company. Every recommendation we make is based on your best interests, and every policy we write is backed by our commitment to ongoing service and annual reviews. When your life changes, your coverage should too, and we make sure it does.
-              </p>
-              <ul className="space-y-3">
-                {['Free annual policy reviews', 'Claims advocacy and support', 'Multi-policy bundle discounts', 'Licensed in 12 states'].map(item => (
-                  <li key={item} className="flex items-center gap-3 text-sm font-medium" style={{ color: 'var(--navy)' }}>
-                    <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs text-white flex-shrink-0" style={{ background: 'var(--accent)' }}>✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 7. Quote Form */}
-        <section id="quote" className="py-24 px-8" style={{ background: 'var(--navy)', color: 'white' }}>
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="badge mb-4" style={{ background: 'rgba(59,130,246,0.15)', color: '#93c5fd', borderColor: 'rgba(59,130,246,0.3)' }}>No Obligation</span>
-            <h2 className="heading-sans text-4xl font-bold mb-4" style={{ color: 'white' }}>Request Your Free Quote</h2>
-            <p className="mb-10" style={{ color: 'rgba(255,255,255,0.7)' }}>
-              Tell us what you need covered and a Sterling agent will compare rates from over twenty-five carriers to find you the best deal. Most quotes are delivered within twenty-four hours. There is no cost and no obligation to buy.
-            </p>
-            {submitted ? (
-              <div className="py-12">
-                <p className="heading-sans text-3xl font-bold mb-3" style={{ color: '#60a5fa' }}>Quote Request Received</p>
-                <p style={{ color: 'rgba(255,255,255,0.7)' }}>A dedicated Sterling agent will contact you within twenty-four hours with your personalized quote comparison. Thank you for choosing Sterling Insurance Group.</p>
               </div>
-            ) : (
-              <form onSubmit={e => { e.preventDefault(); setSubmitted(true); }} className="space-y-4 text-left" style={{ color: '#1a1a1a' }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input type="text" placeholder="Full Name" required />
-                  <input type="tel" placeholder="Phone Number" required />
-                </div>
-                <input type="email" placeholder="Email Address" required className="w-full" />
-                <select defaultValue="">
-                  <option value="" disabled>Select Coverage Type</option>
-                  {coverageTypes.map(c => <option key={c.name}>{c.name}</option>)}
-                </select>
-                <textarea rows={4} placeholder="Tell us about your current coverage, what you need, and any relevant details such as vehicle year, home value, or business type..." />
-                <button type="submit" className="btn w-full text-center" style={{ background: '#2563eb' }}>Submit Quote Request</button>
-                <p className="text-xs text-center" style={{ color: 'rgba(255,255,255,0.5)' }}>By submitting this form, you agree to be contacted by a Sterling Insurance Group agent regarding your quote request.</p>
-              </form>
-            )}
+            ))}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" style={{ padding: '100px 0' }}>
+        <div style={{ maxWidth: 720, margin: '0 auto', padding: '0 24px' }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
+            <p className="label-text" style={{ marginBottom: 12 }}>FAQ</p>
+            <h2 style={{ marginBottom: 16 }}>Common questions</h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {faqs.map((faq, i) => (
+              <div key={i} className={`faq-item reveal ${activeFaq === i ? 'open' : ''}`}>
+                <button
+                  onClick={() => setActiveFaq(activeFaq === i ? null : i)}
+                  style={{ width: '100%', padding: '16px 20px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'var(--font)', fontSize: '0.9375rem', fontWeight: 600, color: 'var(--heading)', textAlign: 'left' }}
+                >
+                  <span>{faq.q}</span>
+                  <span style={{ fontSize: '1.25rem', color: 'var(--accent)', transition: 'transform 0.3s', transform: activeFaq === i ? 'rotate(45deg)' : 'rotate(0)' }}>+</span>
+                </button>
+                <div className={`faq-answer ${activeFaq === i ? 'open' : ''}`} style={{ padding: activeFaq === i ? '0 20px 16px' : '0 20px' }}>
+                  <p style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>{faq.a}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="dark-section" style={{ padding: '100px 0', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -100, left: -100, width: 400, height: 400, background: 'radial-gradient(circle, rgba(83,58,253,0.12) 0%, transparent 60%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
+            <div className="reveal">
+              <p className="label-text" style={{ marginBottom: 12 }}>Get a Quote</p>
+              <h2 style={{ marginBottom: 16 }}>Protect your family today</h2>
+              <p style={{ marginBottom: 32, fontSize: '1.0625rem', lineHeight: 1.6 }}>
+                Fill out the form and one of our licensed agents will contact you within 2 hours with a personalized quote. No obligation, no pressure.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+                {[
+                  { icon: '📞', label: 'Call Us', val: '1-800-SHIELD-1 (1-800-744-3531)' },
+                  { icon: '📧', label: 'Email', val: 'quotes@shieldinsurance.com' },
+                  { icon: '📍', label: 'Headquarters', val: '500 Insurance Plaza, Chicago, IL 60601' },
+                  { icon: '🕐', label: 'Hours', val: '24/7 Claims · Sales: Mon-Sat 8AM-8PM' },
+                ].map((c, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                    <div style={{ width: 40, height: 40, borderRadius: 6, background: 'rgba(83,58,253,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>{c.icon}</div>
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: '0.9375rem' }}>{c.label}</div>
+                      <div style={{ fontSize: '0.875rem', color: 'var(--dark-muted)' }}>{c.val}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="reveal">
+              <form onSubmit={handleSubmit} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, padding: '32px' }}>
+                <h3 style={{ marginBottom: 24, fontSize: '1.25rem' }}>Request your free quote</h3>
+                {formSubmitted ? (
+                  <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                    <div style={{ fontSize: '3rem', marginBottom: 16 }}>🛡️</div>
+                    <h3 style={{ marginBottom: 8 }}>Quote Request Received!</h3>
+                    <p style={{ color: 'var(--dark-muted)' }}>An agent will contact you within 2 hours.</p>
+                  </div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                    <div>
+                      <label style={{ display: 'block', marginBottom: 6, fontSize: '0.875rem', fontWeight: 500 }}>Full Name</label>
+                      <input type="text" placeholder="John Smith" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', marginBottom: 6, fontSize: '0.875rem', fontWeight: 500 }}>Email</label>
+                      <input type="email" placeholder="john@example.com" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required />
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', marginBottom: 6, fontSize: '0.875rem', fontWeight: 500 }}>Phone</label>
+                      <input type="tel" placeholder="+1 (555) 000-0000" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required />
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', marginBottom: 6, fontSize: '0.875rem', fontWeight: 500 }}>Insurance Type</label>
+                      <select value={formData.insurance} onChange={(e) => setFormData({ ...formData, insurance: e.target.value })} required>
+                        <option value="">Select coverage type</option>
+                        <option value="life">Life Insurance</option>
+                        <option value="health">Health Insurance</option>
+                        <option value="auto">Auto Insurance</option>
+                        <option value="home">Home Insurance</option>
+                        <option value="business">Business Insurance</option>
+                        <option value="bundle">Bundle (Multiple)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', marginBottom: 6, fontSize: '0.875rem', fontWeight: 500 }}>Additional Details</label>
+                      <textarea rows={3} placeholder="Tell us about your coverage needs..." value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} style={{ resize: 'vertical' }} />
+                    </div>
+                    <button type="submit" className="btn-primary btn-primary-lg" style={{ width: '100%' }}>Get My Free Quote</button>
+                    <p style={{ fontSize: '0.75rem', textAlign: 'center', color: 'var(--dark-muted)' }}>No obligation. Your information is secure and never shared.</p>
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer style={{ background: '#0f1a2e', color: 'rgba(255,255,255,0.7)' }}>
-        <div className="max-w-6xl mx-auto py-16 px-8">
-          <div className="grid md:grid-cols-4 gap-10 mb-12">
-            <div className="md:col-span-2">
-              <h3 className="heading-sans text-xl font-bold mb-3" style={{ color: 'white' }}>Sterling Insurance Group</h3>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                An independent insurance agency serving families and businesses across the Southeast since 1988. We represent over twenty-five top-rated carriers and provide personalized coverage solutions backed by decades of experience and genuine care.
-              </p>
-              <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>Licensed in 12 states across the Southeast and Mid-Atlantic region.</p>
-            </div>
+      <footer className="footer-stripe" style={{ padding: '64px 0 32px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4" style={{ color: 'rgba(255,255,255,0.9)' }}>Contact</h4>
-              <div className="space-y-2 text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                <p>3200 Peachtree Rd NE<br />Atlanta, GA 30305</p>
-                <p><a href="tel:(404) 555-0189" style={{ color: '#60a5fa' }}>(404) 555-0189</a></p>
-                <p><a href="mailto:quotes@sterlingins.com" style={{ color: '#60a5fa' }}>quotes@sterlingins.com</a></p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+                <div style={{ width: 32, height: 32, background: 'var(--accent)', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700 }}>S</div>
+                <span style={{ fontWeight: 600, fontSize: '1.125rem', color: 'var(--dark-text)' }}>Shield Insurance</span>
+              </div>
+              <p style={{ fontSize: '0.875rem', lineHeight: 1.6, maxWidth: 320, marginBottom: 20 }}>
+                Comprehensive insurance solutions protecting families and businesses since 1998. A+ rated, licensed nationwide.
+              </p>
+              <div style={{ display: 'flex', gap: 12 }}>
+                {['LinkedIn', 'Facebook', 'Twitter'].map((s) => (
+                  <a key={s} href="#" className="footer-link" style={{ padding: '6px 12px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, fontSize: '0.8125rem' }}>{s}</a>
+                ))}
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-sm uppercase tracking-wider mb-4" style={{ color: 'rgba(255,255,255,0.9)' }}>Hours</h4>
-              <div className="space-y-1 text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                <p>Monday – Friday: 8am – 6pm</p>
-                <p>Saturday: 9am – 1pm</p>
-                <p>Sunday: Closed</p>
+              <h4 style={{ color: 'var(--dark-text)', fontSize: '0.875rem', fontWeight: 600, marginBottom: 16 }}>Coverage</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {['Life Insurance', 'Health Insurance', 'Auto Insurance', 'Home Insurance', 'Business Insurance'].map((l) => (
+                  <a key={l} href="#" className="footer-link">{l}</a>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 style={{ color: 'var(--dark-text)', fontSize: '0.875rem', fontWeight: 600, marginBottom: 16 }}>Company</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {['About Us', 'Careers', 'Press', 'Blog', 'Contact'].map((l) => (
+                  <a key={l} href="#" className="footer-link">{l}</a>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 style={{ color: 'var(--dark-text)', fontSize: '0.875rem', fontWeight: 600, marginBottom: 16 }}>Support</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {['File a Claim', 'FAQ', 'Policy Lookup', 'Agent Locator', 'Customer Portal'].map((l) => (
+                  <a key={l} href="#" className="footer-link">{l}</a>
+                ))}
               </div>
             </div>
           </div>
-          <div className="border-t pt-8 text-center text-xs" style={{ borderColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.35)' }}>
-            <p>© 2024 Sterling Insurance Group. All rights reserved. Licensed in Georgia, Florida, Alabama, South Carolina, North Carolina, Tennessee, Virginia, Mississippi, Louisiana, Texas, Kentucky, and Maryland.</p>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+            <p style={{ fontSize: '0.8125rem' }}>2026 Shield Insurance Group. All rights reserved. NAIC #12345.</p>
+            <div style={{ display: 'flex', gap: 24 }}>
+              <a href="#" className="footer-link" style={{ fontSize: '0.8125rem' }}>Privacy Policy</a>
+              <a href="#" className="footer-link" style={{ fontSize: '0.8125rem' }}>Terms of Service</a>
+              <a href="#" className="footer-link" style={{ fontSize: '0.8125rem' }}>Licenses</a>
+            </div>
           </div>
         </div>
       </footer>
-    </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .nav-desktop { display: none !important; }
+          .mobile-toggle { display: block !important; }
+        }
+      `}</style>
+    </>
   );
 }
