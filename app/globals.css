@@ -1,5 +1,6 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
 
 /* ============================================
    STRIPE DESIGN SYSTEM — Insurance Agency
@@ -9,7 +10,7 @@
   /* Core Palette */
   --bg: #ffffff;
   --heading: #061b31;
-  --body: #64748d;
+  --body: #4a5568;
   --accent: #533afd;
   --accent-hover: #452ce0;
   --label: #273951;
@@ -27,7 +28,7 @@
   /* Dark Section */
   --dark-bg: #1c1e54;
   --dark-text: #ffffff;
-  --dark-muted: rgba(255, 255, 255, 0.6);
+  --dark-muted: rgba(255, 255, 255, 0.72);
 
   /* Blue-tinted shadows */
   --shadow-card: rgba(50, 50, 93, 0.25) 0px 30px 45px -30px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
@@ -322,7 +323,7 @@ a:hover {
 
 .dark-section input::placeholder,
 .dark-section textarea::placeholder {
-  color: rgba(255, 255, 255, 0.4) !important;
+  color: rgba(255, 255, 255, 0.55) !important;
 }
 
 .dark-section input:focus,
@@ -357,7 +358,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 input::placeholder, textarea::placeholder {
-  color: #9ca3af;
+  color: #7d7873;
   font-weight: 300;
 }
 
@@ -640,7 +641,6 @@ input::placeholder, textarea::placeholder {
     padding-right: 1rem;
   }
 }
-
 
 /* ===== FINAL 10/10 POLISH ===== */
 
