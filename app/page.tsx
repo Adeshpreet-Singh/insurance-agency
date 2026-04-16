@@ -129,7 +129,7 @@ export default function HomePage() {
               { icon: '🏢', title: 'Business Insurance', desc: 'Complete business protection including general liability, professional liability, property, cyber, and directors & officers insurance.' },
               { icon: '✈️', title: 'Travel Insurance', desc: 'Travel with confidence. Trip cancellation, medical evacuation, baggage protection, and 24/7 emergency assistance worldwide.' },
             ].map((cov, i) => (
-              <div key={i} className={'card-coverage reveal reveal-delay-${i % 4 + 1}'}>
+              <div key={i} className={`card-coverage reveal reveal-delay-${i % 4 + }1}`}>
                 <div style={{ width: 48, height: 48, borderRadius: 6, background: 'var(--purple-50)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', marginBottom: 16 }}>{cov.icon}</div>
                 <h3 style={{ marginBottom: 8, fontSize: '1.125rem' }}>{cov.title}</h3>
                 <p style={{ fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: 16 }}>{cov.desc}</p>
@@ -180,7 +180,7 @@ export default function HomePage() {
               { number: '98.5%', label: 'Claims Settled' },
               { number: '26+', label: 'Years of Trust' },
             ].map((stat, i) => (
-              <div key={i} className={'stat-card-dark reveal reveal-delay-${i + 1}'}>
+              <div key={i} className={`stat-card-dark reveal reveal-delay-${i + }1}`}>
                 <div style={{ fontSize: '2.5rem', fontWeight: 300, color: 'var(--purple-200)', marginBottom: 8, letterSpacing: '-0.64px' }}>{stat.number}</div>
                 <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{stat.label}</div>
               </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
               { name: 'Family Shield', price: '$129', period: '/month', desc: 'Complete family protection', features: ['Enhanced life coverage ($500K)', 'Family health insurance', 'Home insurance (basic)', 'Auto insurance (1 vehicle)', 'Dedicated agent', '24/7 phone support'], popular: true },
               { name: 'Total Protection', price: '$249', period: '/month', desc: 'Comprehensive coverage, zero worries', features: ['Premium life coverage ($1M)', 'Premium family health', 'Home insurance (comprehensive)', 'Auto insurance (2 vehicles)', 'Umbrella liability ($1M)', 'Travel insurance', 'Priority claims processing', 'Annual policy review'], popular: false },
             ].map((plan, i) => (
-              <div key={i} className={'card reveal reveal-delay-${i + 1}'} style={{ padding: '32px', position: 'relative', border: plan.popular ? '2px solid var(--accent)' : undefined }}>
+              <div key={i} className={`card reveal reveal-delay-${i + }1}`} style={{ padding: '32px', position: 'relative', border: plan.popular ? '2px solid var(--accent)' : undefined }}>
                 {plan.popular && <div style={{ position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)', background: 'var(--accent)', color: '#fff', padding: '4px 16px', borderRadius: 100, fontSize: '0.75rem', fontWeight: 600 }}>Most Popular</div>}
                 <h3 style={{ fontSize: '1.25rem', marginBottom: 4 }}>{plan.name}</h3>
                 <div style={{ marginBottom: 8 }}>
@@ -245,7 +245,7 @@ export default function HomePage() {
               { step: '03', icon: '📋', title: 'Choose Your Plan', desc: 'Compare plans side by side and select the one that fits your budget and needs.' },
               { step: '04', icon: '🛡️', title: 'Start Coverage', desc: 'Your policy is issued digitally. Coverage can begin the same day.' },
             ].map((phase, i) => (
-              <div key={i} className={'reveal reveal-delay-${i + 1}'} style={{ textAlign: 'center' }}>
+              <div key={i} className={`reveal reveal-delay-${i + }1}`} style={{ textAlign: 'center' }}>
                 <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'var(--purple-50)', border: '2px solid var(--purple-100)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: '2rem' }}>{phase.icon}</div>
                 <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)', marginBottom: 8, letterSpacing: '0.08em' }}>STEP {phase.step}</div>
                 <h3 style={{ marginBottom: 8, fontSize: '1.0625rem' }}>{phase.title}</h3>
@@ -269,7 +269,7 @@ export default function HomePage() {
               { quote: "I switched from a big national insurer to Shield and saved $2,400 a year with better coverage. My agent Sarah actually takes the time to explain everything and answer my questions.", name: 'Marcus Williams', title: 'Family Shield Plan', stars: 5 },
               { quote: "As a small business owner, I needed comprehensive coverage without breaking the bank. Shield's business insurance package was perfect — affordable, thorough, and their support team is always available.", name: 'Jennifer Adams', title: 'CEO, Adams Consulting', stars: 5 },
             ].map((t, i) => (
-              <div key={i} className={'testimonial-card reveal reveal-delay-${i + 1}'}>
+              <div key={i} className={`testimonial-card reveal reveal-delay-${i + }1}`}>
                 <div className="stars" style={{ marginBottom: 16 }}>{'★'.repeat(t.stars)}</div>
                 <p style={{ marginBottom: 24, lineHeight: 1.6, fontSize: '0.9375rem' }}>{t.quote}</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -294,7 +294,7 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {faqs.map((faq, i) => (
-              <div key={i} className={'faq-item reveal ${activeFaq === i ? 'open' : ''}'}>
+              <div key={i} className={`faq-item reveal ${activeFaq === i ? 'open' : '}'}`}>
                 <button
                   onClick={() => setActiveFaq(activeFaq === i ? null : i)}
                   style={{ width: '100%', padding: '16px 20px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'var(--font)', fontSize: '0.9375rem', fontWeight: 600, color: 'var(--heading)', textAlign: 'left' }}
@@ -302,7 +302,7 @@ export default function HomePage() {
                   <span>{faq.q}</span>
                   <span style={{ fontSize: '1.25rem', color: 'var(--accent)', transition: 'transform 0.3s', transform: activeFaq === i ? 'rotate(45deg)' : 'rotate(0)' }}>+</span>
                 </button>
-                <div className={'faq-answer ${activeFaq === i ? 'open' : ''}'} style={{ padding: activeFaq === i ? '0 20px 16px' : '0 20px' }}>
+                <div className={`faq-answer ${activeFaq === i ? 'open' : '}'}`} style={{ padding: activeFaq === i ? '0 20px 16px' : '0 20px' }}>
                   <p style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>{faq.a}</p>
                 </div>
               </div>
