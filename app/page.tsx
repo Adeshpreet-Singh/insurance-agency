@@ -389,7 +389,36 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="footer-stripe" style={{ padding: '64px 0 32px' }}>
+      
+      <section className="section reveal" style={ 
+        background: `linear-gradient(135deg, #1e40af, #1e40afdd)`,
+        color: 'white',
+        textAlign: 'center'
+      }>
+        <div className="container">
+          <h2 style={ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }>
+            Ready to Transform Your Business?
+          </h2>
+          <p style={ 
+            fontSize: '1.25rem', 
+            opacity: 0.9,
+            maxWidth: '600px',
+            margin: '0 auto 2.5rem'
+          }>
+            Join hundreds of satisfied clients who have achieved remarkable results with our insurance agency solutions.
+          </p>
+          <div style={ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }>
+            <button className="btn-primary btn-lg" style={ background: 'white', color: '#1e40af' }>
+              Start Your Project Today
+            </button>
+            <button className="btn-secondary btn-lg" style={ borderColor: 'white', color: 'white' }>
+              Schedule a Call
+            </button>
+          </div>
+        </div>
+      </section>
+
+<footer className="footer-stripe" style={{ padding: '64px 0 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
             <div>
