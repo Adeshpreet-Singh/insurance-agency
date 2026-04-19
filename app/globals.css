@@ -285,3 +285,56 @@ img {
 
 section { position: relative; overflow: hidden; }
 button { cursor: pointer; font-family: var(--font); }
+
+/* Typography hierarchy */
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
+
+/* Footer */
+footer {
+  background: var(--navy-dark);
+  color: var(--white);
+  padding: 3rem 0 1.5rem;
+}
+footer h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--body-light);
+}
+footer a, footer button {
+  display: block;
+  color: rgba(255,255,255,0.7);
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  text-align: left;
+}
+footer a:hover, footer button:hover { color: var(--white); }
+
+/* WhatsApp floating button */
+a[aria-label="Chat on WhatsApp"] {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  z-index: 50;
+  transition: transform 0.2s;
+}
+a[aria-label="Chat on WhatsApp"]:hover { transform: scale(1.1); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  section { padding-top: 2rem; padding-bottom: 2rem; }
+}
