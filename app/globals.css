@@ -13,8 +13,8 @@
   --white: #ffffff;
   --off-white: #f8fafc;
   --cool-gray: #f1f5f9;
-  --body: #475569;
-  --body-light: #94a3b8;
+  --body: #334155;
+  --body-light: #64748b;
   --border: #e2e8f0;
   --radius: 8px;
   --radius-lg: 12px;
@@ -166,11 +166,11 @@ p, li, span, td, label, dd {
 
 /* Section divider */
 .section-divider {
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, var(--accent), var(--accent-light));
   margin: 0 auto;
   max-width: 80px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* Badge */
@@ -254,6 +254,27 @@ a:not(.btn):not(.btn-outline) {
   border-radius: 3px;
 }
 
+/* Form labels */
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+form .grid > div { margin-bottom: 0.5rem; }
+form > div + div { margin-top: 1rem; }
+form > div + p { margin-top: 0.75rem; font-size: 0.85rem; }
+
+/* Section heading text */
+section .text-center p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--body);
+}
+
 /* Focus */
 *:focus-visible {
   outline: 2px solid var(--accent);
@@ -272,8 +293,21 @@ a:not(.btn):not(.btn-outline) {
 
 /* Mobile */
 @media (max-width: 768px) {
-  section { padding-left: 1rem !important; padding-right: 1rem !important; }
+  section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
   .stat-number { font-size: 2rem; }
+  h1 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
+  h2 { font-size: clamp(1.35rem, 4vw, 1.8rem); }
+  h3 { font-size: clamp(1.1rem, 3vw, 1.4rem); }
+  p, li, td, label, dd { font-size: 1rem !important; line-height: 1.7 !important; }
+  .card { padding: 1.25rem; }
+  .btn, .btn-outline { padding: 1rem 1.5rem; font-size: 1rem; min-height: 48px; }
+  footer a, footer button { padding: 0.5rem 0 !important; font-size: 1rem !important; min-height: 44px; display: flex; align-items: center; }
+  body { font-size: 16px; }
+  .grid { overflow-x: hidden; }
+  .max-w-6xl { max-width: 100%; }
+  /* Prevent horizontal overflow */
+  html, body { overflow-x: hidden; width: 100%; }
+  * { max-width: 100%; box-sizing: border-box; }
 }
 
 /* Images */
@@ -306,14 +340,27 @@ footer h4 {
 }
 footer a, footer button {
   display: block;
-  color: rgba(255,255,255,0.7);
-  padding: 0.25rem 0;
+  color: rgba(255,255,255,0.8);
+  padding: 0.35rem 0;
   font-size: 0.9rem;
   background: none;
   border: none;
   text-align: left;
 }
 footer a:hover, footer button:hover { color: var(--white); }
+footer .footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+footer .footer-bottom span { color: rgba(255,255,255,0.5); }
 
 /* WhatsApp floating button */
 a[aria-label="Chat on WhatsApp"] {
@@ -335,6 +382,3 @@ a[aria-label="Chat on WhatsApp"] {
 a[aria-label="Chat on WhatsApp"]:hover { transform: scale(1.1); }
 
 /* Responsive */
-@media (max-width: 768px) {
-  section { padding-top: 2rem; padding-bottom: 2rem; }
-}
