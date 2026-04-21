@@ -232,7 +232,7 @@ export default function Home() {
  {SERVICES.map((svc, i) => (
  <article
  key={i}
- className={`card ${activeService === i ? 'active' : ''}`}
+ className={`card transition-all hover:-translate-y-1 ${activeService === i ? 'active' : ''}`}
  onClick={() => setActiveService(activeService === i ? null : i)}
  role="button"
  tabIndex={0}
@@ -286,7 +286,7 @@ export default function Home() {
  </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {CLAIMS_STEPS.map((s, i) => (
- <div key={i} className="card text-center">
+ <div key={i} className="card text-center hover:-translate-y-1 transition-all duration-300">
  <div>{s.step}</div>
  <h3>{s.title}</h3>
  <p>{s.desc}</p>
@@ -316,10 +316,10 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TEAM.map((member, i) => (
- <div key={i} className="card">
- <div>
- {member.name.split(' ').map(n => n[0]).join('')}
- </div>
+<div key={i} className="card hover:-translate-y-1 transition-all duration-300">
+<div>
+              {member.name.split(' ').map(n => n[0]).join('')}
+</div>
  <div>{member.title}</div>
  <h3>{member.name}</h3>
  <div>
@@ -369,7 +369,7 @@ export default function Home() {
  { label: 'IIABA', sub: 'Best Practices Agency' },
  { label: 'BBB A+', sub: 'Accredited Business' },
  ].map((award, i) => (
- <div key={i} className="trust-badge">
+ <div key={i} className="trust-badge hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
  <div>{award.label}</div>
  <div>{award.sub}</div>
  </div>
@@ -487,7 +487,7 @@ export default function Home() {
  <textarea id="message" name="message" rows={4} placeholder="Tell us about your coverage needs..." />
  </div>
  <div>
- <button type="submit" className="btn" disabled={formStatus === 'sending'}>
+ <button type="submit" className="btn transition-all duration-300" disabled={formStatus === 'sending'}>
  {formStatus === 'sending' ? 'Sending...' : 'Request Quote'}
  </button>
  </div>
