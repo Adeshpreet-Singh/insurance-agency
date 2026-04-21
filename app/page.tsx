@@ -114,7 +114,7 @@ export default function Home() {
  {/* Header */}
  <header>
  <nav role="navigation" aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[var(--border)]">
- <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+ <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
  <div>
  <h1 className="text-xl tracking-[0.15em] uppercase font-bold">
  Sterling <span>Insurance</span>
@@ -174,7 +174,7 @@ export default function Home() {
  <main id="main" role="main">
  {/* Hero */}
  <section className="hero pt-28 pb-20 md:pb-32">
- <div className="max-w-6xl mx-auto px-6 relative z-10">
+ <div className="max-w-7xl mx-auto px-6 relative z-10">
  <div className="grid md:grid-cols-12 gap-8 items-end">
  <div className="md:col-span-8">
  <p className="text-sm tracking-[0.3em] uppercase mb-6">
@@ -217,7 +217,7 @@ export default function Home() {
 
  {/* Services */}
  <section id="services" className="py-16 md:py-20" aria-labelledby="services-heading">
- <div className="max-w-6xl mx-auto px-6">
+ <div className="max-w-7xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge mb-4">What We Cover</span>
  <h2 id="services-heading">
@@ -274,7 +274,7 @@ export default function Home() {
 
  {/* Claims Process */}
  <section id="claims" className="section-alt py-16 md:py-20" aria-labelledby="claims-heading">
- <div className="max-w-6xl mx-auto px-6">
+ <div className="max-w-7xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge mb-4">Claims Process</span>
  <h2 id="claims-heading">
@@ -303,7 +303,7 @@ export default function Home() {
 
  {/* Team */}
  <section id="team" className="py-16 md:py-20 section-dark" aria-labelledby="team-heading">
- <div className="max-w-6xl mx-auto px-6">
+ <div className="max-w-7xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge badge-dark mb-4">Our Team</span>
  <h2 id="team-heading">
@@ -335,7 +335,7 @@ export default function Home() {
 
  {/* Testimonials */}
  <section id="testimonials" className="py-16 md:py-20" aria-labelledby="testimonials-heading">
- <div className="max-w-6xl mx-auto px-6">
+ <div className="max-w-7xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge mb-4">Client Trust</span>
  <h2 id="testimonials-heading">
@@ -380,7 +380,7 @@ export default function Home() {
 
  {/* Contact */}
  <section id="contact" className="py-24 section-alt" aria-labelledby="contact-heading">
- <div className="max-w-6xl mx-auto px-6">
+ <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
  <div className="md:col-span-5">
  <span className="badge mb-4">Get In Touch</span>
@@ -512,7 +512,7 @@ export default function Home() {
 
 {/* CTA */}
         <section className="py-20 text-center">
-          <div className="max-w-3xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <h2>
               Ready to Get Protected?
             </h2>
@@ -533,7 +533,7 @@ export default function Home() {
 
  {/* Footer */}
  <footer>
- <div className="max-w-6xl mx-auto px-6">
+ <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
  <div>
  <div>
