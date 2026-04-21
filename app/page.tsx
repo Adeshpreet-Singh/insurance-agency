@@ -216,7 +216,7 @@ export default function Home() {
  </section>
 
  {/* Services */}
- <section id="services" className="py-24" aria-labelledby="services-heading">
+ <section id="services" className="py-16 md:py-20" aria-labelledby="services-heading">
  <div className="max-w-6xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge mb-4">What We Cover</span>
@@ -273,7 +273,7 @@ export default function Home() {
  </section>
 
  {/* Claims Process */}
- <section id="claims" className="section-alt py-24" aria-labelledby="claims-heading">
+ <section id="claims" className="section-alt py-16 md:py-20" aria-labelledby="claims-heading">
  <div className="max-w-6xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge mb-4">Claims Process</span>
@@ -302,7 +302,7 @@ export default function Home() {
  </section>
 
  {/* Team */}
- <section id="team" className="py-24 section-dark" aria-labelledby="team-heading">
+ <section id="team" className="py-16 md:py-20 section-dark" aria-labelledby="team-heading">
  <div className="max-w-6xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge badge-dark mb-4">Our Team</span>
@@ -334,7 +334,7 @@ export default function Home() {
  </section>
 
  {/* Testimonials */}
- <section id="testimonials" className="py-24" aria-labelledby="testimonials-heading">
+ <section id="testimonials" className="py-16 md:py-20" aria-labelledby="testimonials-heading">
  <div className="max-w-6xl mx-auto px-6">
  <div className="text-center mb-16">
  <span className="badge mb-4">Client Trust</span>
