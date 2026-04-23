@@ -436,16 +436,7 @@ export default function Home() {
 
  {/* Google Maps Embed */}
  <div className="overflow-hidden rounded-lg">
- <iframe
- src="[WEBSITE]/maps/embed?pb=!1m18!1m12!1m3!1d2948.5!2d-71.0535!3d42.3585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDIxJzMwLjYiTiA3McKwMDMnMTIuNiJX!5e0!3m2!1sen!2sus!4v1"
- width="100%"
- height="250"
- style={{ border: 0, maxWidth: '100%' }}
- allowFullScreen
- loading="lazy"
- referrerPolicy="no-referrer-when-downgrade"
- title="Sterling Insurance Group Office Location"
- />
+ <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-sm">Map View</div>
  </div>
  </div>
 
