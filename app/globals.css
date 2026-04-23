@@ -15,6 +15,24 @@
   --border-default: rgba(0,0,0,0.1);
   --border-subtle: rgba(0,0,0,0.05);
   --border-hover: rgba(0,0,0,0.2);
+  --accent: initial;
+  --accent-dark: initial;
+  --accent-light: initial;
+  --blue-100: initial;
+  --blue-50: initial;
+  --body: initial;
+  --body-light: initial;
+  --border: #e5e5e5;
+  --cool-gray: #9a9a9a;
+  --font: initial;
+  --navy: #1a1a2e;
+  --navy-dark: #0f0f1a;
+  --navy-light: #2a2a4e;
+  --off-white: #faf9f6;
+  --radius: 8px;
+  --radius-lg: 8px;
+  --shadow-lg: 0 4px 6px rgba(0,0,0,0.1);
+  --white: #ffffff;
 }
 /* FONTS_INJECTED */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
