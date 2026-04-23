@@ -1,27 +1,23 @@
+/* FONTS_INJECTED */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+:root {
+  --font-heading: 'Inter', serif;
+  --font-body: 'Inter', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+body { font-family: var(--font-body); }
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Crimson+Text:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --navy: #1a2744;
-  --navy-light: #253655;
-  --navy-dark: #0f1a2e;
-  --accent: #1e40af;
-  --accent-light: #3b82f6;
-  --accent-dark: #1e3a8a;
-  --blue-50: #eff6ff;
-  --blue-100: #dbeafe;
-  --white: #ffffff;
-  --off-white: #f8fafc;
-  --cool-gray: #f1f5f9;
-  --body: #334155;
-  --body-light: #64748b;
-  --border: #e2e8f0;
-  --radius: 8px;
-  --radius-lg: 12px;
-  --shadow-sm: 0 1px 3px rgba(30,64,175,0.06);
-  --shadow-md: 0 4px 16px rgba(30,64,175,0.08);
-  --shadow-lg: 0 12px 36px rgba(30,64,175,0.12);
-  --font: 'Nunito Sans', sans-serif;
+  --primary: #1e3a5f;
+  --secondary: #2d5a87;
+  --accent: #c9a227;
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --text: #1a1a2e;
+  --muted: #6c757d;
 }
 
 html { scroll-behavior: smooth; }
@@ -226,8 +222,8 @@ input::placeholder, textarea::placeholder {
 
 /* Scroll reveal */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .reveal.visible {
@@ -385,7 +381,7 @@ a[aria-label="Chat on WhatsApp"] {
   right: 1.5rem;
   width: 56px;
   height: 56px;
-  background: #25d366;
+  background: var(--accent, #666);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -423,3 +419,13 @@ section, .section { margin-bottom: 0; }
 .vt-md { margin-top: 2.5rem; margin-bottom: 2.5rem; }
 .vt-lg { margin-top: 4rem; margin-bottom: 4rem; }
 .vt-xl { margin-top: 5rem; margin-bottom: 5rem; }
+/* DESIGN_SYSTEM_INJECTED */
+body {
+  background-color: #f8f9fa;
+  color: #1a1a2e;
+}
+.bg-primary { background-color: #1e3a5f !important; }
+.bg-secondary { background-color: #2d5a87 !important; }
+.text-primary { color: #1e3a5f !important; }
+.text-accent { color: #c9a227 !important; }
+.bg-accent { background-color: #c9a227 !important; }
