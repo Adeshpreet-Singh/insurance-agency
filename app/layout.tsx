@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description: "Trusted Boston insurance agency providing auto, home, life, and business coverage since 1991. Get a free quote today. 24/7 claims hotline.",
   keywords: ["insurance", "auto insurance", "home insurance", "life insurance", "business insurance", "Boston insurance agency"],
   authors: [{ name: "Sterling Insurance Group" }],
-  metadataBase: new URL("https://sterlinginsurance.com"),
+  metadataBase: new URL('https://placeholder.com'),
   openGraph: {
     title: "Sterling Insurance Group | Comprehensive Insurance Solutions",
     description: "Trusted Boston insurance agency providing auto, home, life, and business coverage since 1991. Get a free quote today.",
-    url: "https://sterlinginsurance.com",
+    url: "[WEBSITE]",
     siteName: "Sterling Insurance Group",
     locale: "en_US",
     type: "website",

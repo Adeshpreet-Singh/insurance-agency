@@ -37,7 +37,7 @@ const SERVICES = [
  name: 'Umbrella Insurance',
  desc: 'Extended liability protection that goes beyond standard policies, providing an additional layer of security.',
  details: ['Excess Liability', 'Personal Umbrella', 'Commercial Umbrella'],
- icon: '☂️',
+ icon: '',
  },
 ];
 
@@ -69,7 +69,7 @@ const CLAIMS_STEPS = [
 ];
 
 const WHATSAPP_NUMBER = '16175550191';
-const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+const WEB3FORMS_ACCESS_KEY = '[WEB3FORMS_KEY]';
 
 export default function Home() {
  const [menuOpen, setMenuOpen] = useState(false);
@@ -197,20 +197,20 @@ export default function Home() {
  </button>
  </div>
  </div>
-            <div className="md:col-span-4 flex flex-col items-end gap-4 md:gap-6 text-right mt-8 md:mt-0">
-              <div className="stat-card w-full md:w-auto">
-                <div className="stat-number">33</div>
-                <div className="stat-label">Years</div>
-              </div>
-              <div className="stat-card w-full md:w-auto">
-                <div className="stat-number">$2.1B</div>
-                <div className="stat-label">Claims Paid</div>
-              </div>
-              <div className="stat-card w-full md:w-auto">
-                <div className="stat-number">15,000+</div>
-                <div className="stat-label">Families Protected</div>
-              </div>
-            </div>
+ <div className="md:col-span-4 flex flex-col items-end gap-4 md:gap-6 text-right mt-8 md:mt-0">
+ <div className="stat-card w-full md:w-auto">
+ <div className="stat-number">33</div>
+ <div className="stat-label">Years</div>
+ </div>
+ <div className="stat-card w-full md:w-auto">
+ <div className="stat-number">$2.1B</div>
+ <div className="stat-label">Claims Paid</div>
+ </div>
+ <div className="stat-card w-full md:w-auto">
+ <div className="stat-number">15,000+</div>
+ <div className="stat-label">Families Protected</div>
+ </div>
+ </div>
  </div>
  </div>
  </section>
@@ -228,7 +228,7 @@ export default function Home() {
  </p>
  </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 gap-6">
+ <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 gap-6">
  {SERVICES.map((svc, i) => (
  <article
  key={i}
@@ -284,8 +284,8 @@ export default function Home() {
  Filing a claim doesn&apos;t have to be stressful. Our streamlined process gets you back on track fast.
  </p>
  </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {CLAIMS_STEPS.map((s, i) => (
+ <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+ {CLAIMS_STEPS.map((s, i) => (
  <div key={i} className="card text-center hover:-translate-y-1 transition-all duration-300">
  <div>{s.step}</div>
  <h3>{s.title}</h3>
@@ -294,8 +294,8 @@ export default function Home() {
  ))}
  </div>
  <div className="text-center mt-10">
- <a href="tel:+16175550192" className="btn">
-  24/7 Claims Hotline: (617) 555-0192
+ <a href="tel:[PHONE]" className="btn">
+ 24/7 Claims Hotline: [PHONE]
  </a>
  </div>
  </div>
@@ -314,11 +314,11 @@ export default function Home() {
  </p>
  </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {TEAM.map((member, i) => (
+ <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+ {TEAM.map((member, i) => (
 <div key={i} className="card hover:-translate-y-1 transition-all duration-300">
 <div>
-              {member.name.split(' ').map(n => n[0]).join('')}
+ {member.name.split(' ').map(n => n[0]).join('')}
 </div>
  <div>{member.title}</div>
  <h3>{member.name}</h3>
@@ -343,10 +343,10 @@ export default function Home() {
  </h2>
  </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-8">
+ <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-8">
  {TESTIMONIALS.map((t, i) => (
  <blockquote key={i} className="card">
- <div>★★★★★</div>
+ <div></div>
  <p>
  &ldquo;{t.text}&rdquo;
  </p>
@@ -361,8 +361,8 @@ export default function Home() {
  ))}
  </div>
 
-        {/* Awards */}
-        <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4 gap-4 md:gap-6 text-center">
+ {/* Awards */}
+ <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4 gap-4 md:gap-6 text-center">
  {[
  { label: 'Trusted Choice', sub: 'Independent Agent Member' },
  { label: 'AM Best A+', sub: 'Superior Financial Rating' },
@@ -381,7 +381,7 @@ export default function Home() {
  {/* Contact */}
  <section id="contact" className="py-24 section-alt" aria-labelledby="contact-heading">
  <div className=" section-container">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-12 gap-8 md:gap-12">
+ <div className="grid grid-cols-1 gap-6 md:grid-cols-12 gap-8 md:gap-12">
  <div className="md:col-span-5">
  <span className="badge mb-4">Get In Touch</span>
  <h2 id="contact-heading">
@@ -403,21 +403,21 @@ export default function Home() {
  <span></span>
  <div>
  <div>Phone</div>
- <a href="tel:+16175550191">(617) 555-0191</a>
+ <a href="tel:[PHONE]">[PHONE]</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
  <span></span>
  <div>
  <div>Email</div>
- <a href="mailto:info@sterlinginsurance.com">info@sterlinginsurance.com</a>
+ <a href="mailto:[EMAIL]">[EMAIL]</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
  <span></span>
  <div>
  <div>Claims Hotline</div>
- <a href="tel:+16175550192">24/7 — (617) 555-0192</a>
+ <a href="tel:[PHONE]">24/7 — [PHONE]</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
@@ -434,40 +434,40 @@ export default function Home() {
  </div>
  </div>
 
-          {/* Google Maps Embed */}
-          <div className="overflow-hidden rounded-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.5!2d-71.0535!3d42.3585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDIxJzMwLjYiTiA3McKwMDMnMTIuNiJX!5e0!3m2!1sen!2sus!4v1"
-              width="100%"
-              height="250"
-              style={{ border: 0, maxWidth: '100%' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Sterling Insurance Group Office Location"
-            />
-          </div>
-        </div>
+ {/* Google Maps Embed */}
+ <div className="overflow-hidden rounded-lg">
+ <iframe
+ src="[WEBSITE]/maps/embed?pb=!1m18!1m12!1m3!1d2948.5!2d-71.0535!3d42.3585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDIxJzMwLjYiTiA3McKwMDMnMTIuNiJX!5e0!3m2!1sen!2sus!4v1"
+ width="100%"
+ height="250"
+ style={{ border: 0, maxWidth: '100%' }}
+ allowFullScreen
+ loading="lazy"
+ referrerPolicy="no-referrer-when-downgrade"
+ title="Sterling Insurance Group Office Location"
+ />
+ </div>
+ </div>
 
  <div className="md:col-span-7">
  <form className="card" onSubmit={handleSubmit}>
  <input type="hidden" name="subject" value="New Quote Request from Sterling Insurance Website" />
  <input type="checkbox" name="botcheck" />
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="name">Full Name *</label>
-                <input id="name" name="name" type="text" required placeholder="Robert Sterling" />
-              </div>
-              <div>
-                <label htmlFor="email">Email *</label>
-                <input id="email" name="email" type="email" required placeholder="robert@company.com" />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-5">
+ <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-5">
+ <div>
+ <label htmlFor="name">Full Name *</label>
+ <input id="name" name="name" type="text" required placeholder="Robert Sterling" />
+ </div>
+ <div>
+ <label htmlFor="email">Email *</label>
+ <input id="email" name="email" type="email" required placeholder="[EMAIL]" />
+ </div>
+ </div>
+ <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-5">
  <div>
  <label htmlFor="phone">Phone</label>
- <input id="phone" name="phone" type="tel" placeholder="(617) 555-0000" />
+ <input id="phone" name="phone" type="tel" placeholder="[PHONE]" />
  </div>
  <div>
  <label htmlFor="coverage">Coverage Needed *</label>
@@ -493,12 +493,12 @@ export default function Home() {
  </div>
  {formStatus === 'success' && (
  <p>
- ✓ Thank you! We&apos;ll get back to you within 24 hours.
+ Thank you! We&apos;ll get back to you within 24 hours.
  </p>
  )}
  {formStatus === 'error' && (
  <p>
- Something went wrong. Please call us at (617) 555-0191.
+ Something went wrong. Please call us at [PHONE].
  </p>
  )}
  <p>
@@ -511,30 +511,30 @@ export default function Home() {
  </section>
 
 {/* CTA */}
-        <section className="py-20 text-center">
-          <div className=" section-container">
-            <h2>
-              Ready to Get Protected?
-            </h2>
-            <p className="mt-4 mb-8">
-              Contact us today for a free, no-obligation consultation with one of our licensed advisors.
-            </p>
-            <div className="flex justify-center gap-4 flex-wrap">
-              <button onClick={() => scrollToSection('contact')} className="btn">
-                Get Free Quote
-              </button>
-              <a href="tel:+16175550191" className="btn-outline">
-                Call (617) 555-0191
-              </a>
-            </div>
-          </div>
-        </section>
+ <section className="py-20 text-center">
+ <div className=" section-container">
+ <h2>
+ Ready to Get Protected?
+ </h2>
+ <p className="mt-4 mb-8">
+ Contact us today for a free, no-obligation consultation with one of our licensed advisors.
+ </p>
+ <div className="flex justify-center gap-4 flex-wrap">
+ <button onClick={() => scrollToSection('contact')} className="btn">
+ Get Free Quote
+ </button>
+ <a href="tel:[PHONE]" className="btn-outline">
+ Call [PHONE]
+ </a>
+ </div>
+ </div>
+ </section>
  </main>
 
  {/* Footer */}
  <footer>
  <div className=" section-container">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 gap-8">
+ <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 gap-8">
  <div>
  <div>
  Sterling <span>Insurance</span> Group
@@ -562,28 +562,30 @@ export default function Home() {
  <div>
  <h4>Connect</h4>
  <div>
- <a href="tel:+16175550191"> (617) 555-0191</a>
- <a href="mailto:info@sterlinginsurance.com"> info@sterlinginsurance.com</a>
- <span> 200 State St, Boston, MA 02109</span>
+ <a href="tel:[PHONE]"> [PHONE]</a>
+ <a href="mailto:[EMAIL]"> [EMAIL]</a>
+ <span> [ADDRESS]</span>
  </div>
-            <div className="flex gap-3 mt-3">
-              <a href="https://linkedin.com/company/sterling-insurance" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
-              <a href="https://facebook.com/sterlinginsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
-              <a href="https://twitter.com/sterlingins" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
-            </div>
+ <div className="flex gap-3 mt-3">
+ <a href="[LINKEDIN_URL]/sterling-insurance" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
+ <a href="[FACEBOOK_URL]" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
+ <a href="[TWITTER_URL]" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
+ <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
  </div>
  </div>
-          <div className="footer-bottom">
-            <span>© 2026 Sterling Insurance Group. All rights reserved.</span>
-            <div className="flex gap-6">
-              <span>Privacy Policy</span>
-              <span>Terms of Service</span>
-              <span>Licensing</span>
-            </div>
-          </div>
  </div>
- </footer>
+ <div className="footer-bottom">
+ <span>© 2026 Sterling Insurance Group. All rights reserved.</span>
+ <div className="flex gap-6">
+ <span>Privacy Policy</span>
+ <span>Terms of Service</span>
+ <span>Licensing</span>
+ </div>
+ </div>
+ </div>
+ 
+<div className="text-center py-3 text-xs opacity-50 hover:opacity-80 transition-opacity"><span>Designed by </span><a href="https://adeshpreet.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline">Adeshpreet Singh</a></div>
+</footer>
 
  {/* WhatsApp Floating Button */}
  <a
