@@ -7,31 +7,31 @@ const SERVICES = [
  name: 'Auto Insurance',
  desc: 'Full-spectrum auto coverage from liability to comprehensive, with competitive rates and responsive claims service.',
  details: ['Liability Coverage', 'Collision & Comprehensive', 'Uninsured Motorist'],
- icon: '🚗',
+ icon: '',
  },
  {
  name: 'Home Insurance',
  desc: 'Protect your most valuable asset with coverage that shields your home from fire, theft, natural disasters, and liability.',
  details: ['Homeowners', 'Renters Insurance', 'Condo Coverage'],
- icon: '🏠',
+ icon: '',
  },
  {
  name: 'Life Insurance',
  desc: 'Comprehensive life insurance solutions that protect your family\'s financial future and provide lasting peace of mind.',
  details: ['Term Life', 'Whole Life', 'Universal Life'],
- icon: '💙',
+ icon: '',
  },
  {
  name: 'Business Insurance',
  desc: 'Tailored commercial insurance packages that safeguard your business, employees, and assets.',
  details: ['General Liability', 'Workers Compensation', 'Professional Liability'],
- icon: '🏢',
+ icon: '',
  },
  {
  name: 'Health Insurance',
  desc: 'Individual and family health coverage plans with access to the nation\'s leading providers and hospitals.',
  details: ['Individual Plans', 'Family Coverage', 'Medicare Supplement'],
- icon: '🩺',
+ icon: '',
  },
  {
  name: 'Umbrella Insurance',
@@ -295,7 +295,7 @@ export default function Home() {
  </div>
  <div className="text-center mt-10">
  <a href="tel:+16175550192" className="btn">
- 📞 24/7 Claims Hotline: (617) 555-0192
+  24/7 Claims Hotline: (617) 555-0192
  </a>
  </div>
  </div>
@@ -393,35 +393,35 @@ export default function Home() {
 
  <div>
  <div className="flex items-start gap-4">
- <span>📍</span>
+ <span></span>
  <div>
  <div>Office</div>
  <div>200 State Street, Suite 1200<br />Boston, MA 02109</div>
  </div>
  </div>
  <div className="flex items-start gap-4">
- <span>📞</span>
+ <span></span>
  <div>
  <div>Phone</div>
  <a href="tel:+16175550191">(617) 555-0191</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
- <span>📧</span>
+ <span></span>
  <div>
  <div>Email</div>
  <a href="mailto:info@sterlinginsurance.com">info@sterlinginsurance.com</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
- <span>🔔</span>
+ <span></span>
  <div>
  <div>Claims Hotline</div>
  <a href="tel:+16175550192">24/7 — (617) 555-0192</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
- <span>🕐</span>
+ <span></span>
  <div>
  <div>Business Hours</div>
  <div>
@@ -562,15 +562,15 @@ export default function Home() {
  <div>
  <h4>Connect</h4>
  <div>
- <a href="tel:+16175550191">📞 (617) 555-0191</a>
- <a href="mailto:info@sterlinginsurance.com">📧 info@sterlinginsurance.com</a>
- <span>📍 200 State St, Boston, MA 02109</span>
+ <a href="tel:+16175550191"> (617) 555-0191</a>
+ <a href="mailto:info@sterlinginsurance.com"> info@sterlinginsurance.com</a>
+ <span> 200 State St, Boston, MA 02109</span>
  </div>
             <div className="flex gap-3 mt-3">
-              <a href="https://linkedin.com/company/sterling-insurance" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors">🔗</a>
-              <a href="https://facebook.com/sterlinginsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors">📘</a>
-              <a href="https://twitter.com/sterlingins" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors">🐦</a>
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors">💬</a>
+              <a href="https://linkedin.com/company/sterling-insurance" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
+              <a href="https://facebook.com/sterlinginsurance" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
+              <a href="https://twitter.com/sterlingins" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
             </div>
  </div>
  </div>
@@ -592,7 +592,7 @@ export default function Home() {
  rel="noopener noreferrer"
  aria-label="Chat on WhatsApp"
  >
- 💬
+ 
  </a>
  </div>
  );
