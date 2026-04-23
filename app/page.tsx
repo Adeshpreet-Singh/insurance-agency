@@ -294,8 +294,8 @@ export default function Home() {
  ))}
  </div>
  <div className="text-center mt-10">
- <a href="tel:[PHONE]" className="btn">
- 24/7 Claims Hotline: [PHONE]
+ <a href="tel:+91 98765 43210" className="btn">
+ 24/7 Claims Hotline: +91 98765 43210
  </a>
  </div>
  </div>
@@ -403,7 +403,7 @@ export default function Home() {
  <span></span>
  <div>
  <div>Phone</div>
- <a href="tel:[PHONE]">[PHONE]</a>
+ <a href="tel:+91 98765 43210">+91 98765 43210</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
@@ -417,7 +417,7 @@ export default function Home() {
  <span></span>
  <div>
  <div>Claims Hotline</div>
- <a href="tel:[PHONE]">24/7 — [PHONE]</a>
+ <a href="tel:+91 98765 43210">24/7 — +91 98765 43210</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
@@ -467,7 +467,7 @@ export default function Home() {
  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-5">
  <div>
  <label htmlFor="phone">Phone</label>
- <input id="phone" name="phone" type="tel" placeholder="[PHONE]" />
+ <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
  </div>
  <div>
  <label htmlFor="coverage">Coverage Needed *</label>
@@ -498,7 +498,7 @@ export default function Home() {
  )}
  {formStatus === 'error' && (
  <p>
- Something went wrong. Please call us at [PHONE].
+ Something went wrong. Please call us at +91 98765 43210.
  </p>
  )}
  <p>
@@ -523,8 +523,8 @@ export default function Home() {
  <button onClick={() => scrollToSection('contact')} className="btn">
  Get Free Quote
  </button>
- <a href="tel:[PHONE]" className="btn-outline">
- Call [PHONE]
+ <a href="tel:+91 98765 43210" className="btn-outline">
+ Call +91 98765 43210
  </a>
  </div>
  </div>
@@ -562,7 +562,7 @@ export default function Home() {
  <div>
  <h4>Connect</h4>
  <div>
- <a href="tel:[PHONE]"> [PHONE]</a>
+ <a href="tel:+91 98765 43210"> +91 98765 43210</a>
  <a href="mailto:[EMAIL]"> [EMAIL]</a>
  <span> [ADDRESS]</span>
  </div>
