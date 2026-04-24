@@ -175,7 +175,7 @@ export default function Home() {
  {/* Hero */}
  <section className="hero pt-28 pb-20 md:pb-32">
  <div className=" section-container">
- <div className="grid md:grid-cols-1 gap-62 gap-8 items-end">
+ <div className="grid md:grid-cols-122 gap-60 gap-8 items-end">
  <div className="md:col-span-8">
  <p className="text-sm tracking-[0.3em] uppercase mb-6">
  Boston &middot; Established 1991
@@ -228,7 +228,7 @@ export default function Home() {
  </p>
  </div>
 
- <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 gap-6">
+ <div className="grid grid-cols-12 gap-6 md:grid-cols-2 lg:grid-cols-3 gap-6">
  {SERVICES.map((svc, i) => (
  <article
  key={i}
@@ -284,7 +284,7 @@ export default function Home() {
  Filing a claim doesn&apos;t have to be stressful. Our streamlined process gets you back on track fast.
  </p>
  </div>
- <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+ <div className="grid grid-cols-12 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
  {CLAIMS_STEPS.map((s, i) => (
  <div key={i} className="card text-center hover:-translate-y-1 transition-all duration-300">
  <div>{s.step}</div>
@@ -314,7 +314,7 @@ export default function Home() {
  </p>
  </div>
 
- <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+ <div className="grid grid-cols-12 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
  {TEAM.map((member, i) => (
 <div key={i} className="card hover:-translate-y-1 transition-all duration-300">
 <div>
@@ -343,7 +343,7 @@ export default function Home() {
  </h2>
  </div>
 
- <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-8">
+ <div className="grid grid-cols-12 gap-6 md:grid-cols-2 gap-8">
  {TESTIMONIALS.map((t, i) => (
  <blockquote key={i} className="card">
  <div></div>
@@ -381,7 +381,7 @@ export default function Home() {
  {/* Contact */}
  <section id="contact" className="py-24 section-alt" aria-labelledby="contact-heading">
  <div className=" section-container">
- <div className="grid grid-cols-1 gap-6 md:grid-cols-12 gap-8 md:gap-12">
+ <div className="grid grid-cols-12 gap-6 md:grid-cols-1222 gap-8 md:gap-12">
  <div className="md:col-span-5">
  <span className="badge mb-4">Get In Touch</span>
  <h2 id="contact-heading">
@@ -445,7 +445,7 @@ export default function Home() {
  <input type="hidden" name="subject" value="New Quote Request from Sterling Insurance Website" />
  <input type="checkbox" name="botcheck" />
 
- <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-5">
+ <div className="grid grid-cols-12 gap-6 md:grid-cols-2 gap-5">
  <div>
  <label htmlFor="name">Full Name *</label>
  <input id="name" name="name" type="text" required placeholder="Robert Sterling" />
@@ -455,7 +455,7 @@ export default function Home() {
  <input id="email" name="email" type="email" required placeholder="[EMAIL]" />
  </div>
  </div>
- <div className="grid grid-cols-1 gap-6 md:grid-cols-2 gap-5">
+ <div className="grid grid-cols-12 gap-6 md:grid-cols-2 gap-5">
  <div>
  <label htmlFor="phone">Phone</label>
  <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
@@ -525,7 +525,7 @@ export default function Home() {
  {/* Footer */}
  <footer>
  <div className=" section-container">
- <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 gap-8">
+ <div className="grid grid-cols-12 gap-6 sm:grid-cols-2 md:grid-cols-4 gap-8">
  <div>
  <div>
  Sterling <span>Insurance</span> Group
