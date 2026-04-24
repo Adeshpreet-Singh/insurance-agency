@@ -69,7 +69,7 @@ const CLAIMS_STEPS = [
 ];
 
 const WHATSAPP_NUMBER = '16175550191';
-const WEB3FORMS_ACCESS_KEY = '[WEB3FORMS_KEY]';
+const WEB3FORMS_ACCESS_KEY = '00000000-0000-0000-0000-000000000000';
 
 export default function Home() {
  const [menuOpen, setMenuOpen] = useState(false);
@@ -186,7 +186,7 @@ export default function Home() {
  what <span>matters.</span>
  </h2>
  <p>
- Three decades of trusted insurance counsel. We don&apos;t just sell policies — we build protective shields around everything you&apos;ve worked hard to build.
+ Three decades of trusted insurance counsel. We don't just sell policies — we build protective shields around everything you've worked hard to build.
  </p>
  <div className="flex gap-4 flex-wrap">
  <button onClick={() => scrollToSection('contact')} className="btn">
@@ -224,7 +224,7 @@ export default function Home() {
  Coverage Options
  </h2>
  <p>
- From your family&apos;s health to your business&apos;s future, we offer comprehensive coverage solutions tailored to your unique needs.
+ From your family's health to your business's future, we offer comprehensive coverage solutions tailored to your unique needs.
  </p>
  </div>
 
@@ -281,7 +281,7 @@ export default function Home() {
  How Claims Work
  </h2>
  <p>
- Filing a claim doesn&apos;t have to be stressful. Our streamlined process gets you back on track fast.
+ Filing a claim doesn't have to be stressful. Our streamlined process gets you back on track fast.
  </p>
  </div>
  <div className="grid grid-cols-12 gap-6 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -294,8 +294,8 @@ export default function Home() {
  ))}
  </div>
  <div className="text-center mt-10">
- <a href="tel:+91 98765 43210" className="btn">
- 24/7 Claims Hotline: +91 98765 43210
+ <a href="tel:+1-800-555-0410" className="btn">
+ 24/7 Claims Hotline: +1-800-555-0410
  </a>
  </div>
  </div>
@@ -310,7 +310,7 @@ export default function Home() {
  The Advisors Behind Your Protection
  </h2>
  <p>
- Our licensed advisors hold the industry&apos;s highest certifications and bring decades of experience navigating complex insurance needs.
+ Our licensed advisors hold the industry's highest certifications and bring decades of experience navigating complex insurance needs.
  </p>
  </div>
 
@@ -348,7 +348,7 @@ export default function Home() {
  <blockquote key={i} className="card">
  <div></div>
  <p>
- &ldquo;{t.text}&rdquo;
+ "{t.text}"
  </p>
  <footer>
  <cite className="not-italic">
@@ -403,21 +403,21 @@ export default function Home() {
  <span></span>
  <div>
  <div>Phone</div>
- <a href="tel:+91 98765 43210">+91 98765 43210</a>
+ <a href="tel:+1-800-555-0410">+1-800-555-0410</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
  <span></span>
  <div>
  <div>Email</div>
- <a href="mailto:[EMAIL]">[EMAIL]</a>
+ <a href="mailto:info@insuranceagency.com">info@insuranceagency.com</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
  <span></span>
  <div>
  <div>Claims Hotline</div>
- <a href="tel:+91 98765 43210">24/7 — +91 98765 43210</a>
+ <a href="tel:+1-800-555-0410">24/7 — +1-800-555-0410</a>
  </div>
  </div>
  <div className="flex items-start gap-4">
@@ -452,13 +452,13 @@ export default function Home() {
  </div>
  <div>
  <label htmlFor="email">Email *</label>
- <input id="email" name="email" type="email" required placeholder="[EMAIL]" />
+ <input id="email" name="email" type="email" required placeholder="info@insuranceagency.com" />
  </div>
  </div>
  <div className="grid grid-cols-12 gap-6 md:grid-cols-2 gap-5">
  <div>
  <label htmlFor="phone">Phone</label>
- <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
+ <input id="phone" name="phone" type="tel" placeholder="+1-800-555-0410" />
  </div>
  <div>
  <label htmlFor="coverage">Coverage Needed *</label>
@@ -484,12 +484,12 @@ export default function Home() {
  </div>
  {formStatus === 'success' && (
  <p>
- Thank you! We&apos;ll get back to you within 24 hours.
+ Thank you! We'll get back to you within 24 hours.
  </p>
  )}
  {formStatus === 'error' && (
  <p>
- Something went wrong. Please call us at +91 98765 43210.
+ Something went wrong. Please call us at +1-800-555-0410.
  </p>
  )}
  <p>
@@ -514,8 +514,8 @@ export default function Home() {
  <button onClick={() => scrollToSection('contact')} className="btn">
  Get Free Quote
  </button>
- <a href="tel:+91 98765 43210" className="btn-outline">
- Call +91 98765 43210
+ <a href="tel:+1-800-555-0410" className="btn-outline">
+ Call +1-800-555-0410
  </a>
  </div>
  </div>
@@ -553,9 +553,9 @@ export default function Home() {
  <div>
  <h4>Connect</h4>
  <div>
- <a href="tel:+91 98765 43210"> +91 98765 43210</a>
- <a href="mailto:[EMAIL]"> [EMAIL]</a>
- <span> [ADDRESS]</span>
+ <a href="tel:+1-800-555-0410"> +1-800-555-0410</a>
+ <a href="mailto:info@insuranceagency.com"> info@insuranceagency.com</a>
+ <span> 350 Fifth Avenue, New York, NY 10118</span>
  </div>
  <div className="flex gap-3 mt-3">
  <a href="[LINKEDIN_URL]/sterling-insurance" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors"></a>
